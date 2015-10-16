@@ -1,2 +1,2 @@
-\temp\.
-\temp_dir\.
+\temp\*
+\temp_dir\*
