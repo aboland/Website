@@ -4,4 +4,6 @@ title: "Welcome"
 
 For an overview of Latent Dirichlet Allocation click [here](/LDA).  
 
+Duplicate test link [here](/LDA/index_old). 
+
 [Check out statistics from the premier league.](http://ff.aboland.ie)
