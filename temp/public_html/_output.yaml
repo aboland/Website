@@ -1,0 +1,8 @@
+html_document:
+ self_contained: false
+ theme: cerulean
+ lib_dir: libs
+ css: mystyle.css
+ includes:
+   in_header: include/in_header.html
+   before_body: include/before_body.html
