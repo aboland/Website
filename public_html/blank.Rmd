@@ -1,0 +1,21 @@
+---
+title: "Empty page"
+---
+
+This is an test page with examples.....  
+
+<a href="#" class="btn btn-default">Default</a>
+<a href="#" class="btn btn-primary">Primary</a>
+<a href="#" class="btn btn-success">Success</a>
+
+<div class="jumbotron">
+  <h1>Large header!</h1>
+  <p>The content here are examples of the current theme.</p>
+  <p><a href="http://bootswatch.com/cerulean/" class="btn btn-primary btn-lg">Learn more</a></p>
+</div>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><h3 class="panel-title">Panel primary</h3></div>
+  <div class="panel-body">Included using raw html.</div>
+</div>

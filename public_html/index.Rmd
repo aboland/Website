@@ -1,0 +1,7 @@
+---
+title: "Welcome"
+---
+
+For an overview of Latent Dirichlet Allocation click [here](/LDA).  
+
+[Check out statistics from the premier league.](http://ff.aboland.ie)
