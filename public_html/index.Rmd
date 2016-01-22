@@ -10,7 +10,6 @@ title: "Aidan Boland"
 <!--![](images/profile.jpg =1000x200)-->
 <img src="images/profile.jpg" width="100px" height="20px" />  
 
-***
 
 I am a Postdoctoral researcher in the [Insight Center for Data Analytics](https://www.insight-centre.org/) at [UCD](http://www.ucd.ie/) with [Andrew Parnell](http://mathsci.ucd.ie/~parnell_a/) . My current project is in conjunction with [Clavis-Insight](http://clavisinsight.com/) and focuses on machine learning algorithms, in particular supervised and unsupervised classification.  
 
@@ -24,7 +23,7 @@ Noisy Monte Carlo: convergence of Markov chains with approximate transition kern
 
 ### Background
 
-I obtained my PhD under the supervisor on [Nial Friel](http://mathsci.ucd.ie/~nial/) at [UCD](http://www.ucd.ie/) (2015). My PhD research focused on overcoming intractable likelihoods in Bayesian analysis.    
+I obtained my PhD under the supervisor on [Nial Friel](http://mathsci.ucd.ie/~nial/) at [UCD](http://www.ucd.ie/) (2015). My PhD research focused on overcoming intractable likelihoods in Bayesian analysis. I investigated using Markov Chain Monte Carlo to target tractable approximate posterior distributions which were 'close' to the true posterior distributions for Gibbs random fields. 
 
 <!--
 <div class="jumbotron">
