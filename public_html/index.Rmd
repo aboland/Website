@@ -1,5 +1,5 @@
 ---
-title: "Welcome"
+title: "Aidan Boland"
 ---
 
 
@@ -7,16 +7,24 @@ title: "Welcome"
 
  Check out an R-Shiny app showing [statistics from the premier league.](http://ff.aboland.ie) -->
 
-I am a Postdoctoral researcher in the [Insight Center for Data Analytics](https://www.insight-centre.org/) at [UCD](http://www.ucd.ie/) with [Andrew Parnell](http://mathsci.ucd.ie/~parnell_a/) . My current project is in conjunction with [Clavis-Insight](http://clavisinsight.com/) and focuses on machine learning algorithms, in particular supervised and unsupervised classification.
+<!--![](images/profile.jpg =1000x200)-->
+<img src="images/profile.jpg" width="100px" height="20px" />  
+
+***
+
+I am a Postdoctoral researcher in the [Insight Center for Data Analytics](https://www.insight-centre.org/) at [UCD](http://www.ucd.ie/) with [Andrew Parnell](http://mathsci.ucd.ie/~parnell_a/) . My current project is in conjunction with [Clavis-Insight](http://clavisinsight.com/) and focuses on machine learning algorithms, in particular supervised and unsupervised classification.  
+
+***
 
 ### Publications
 
-Noisy Monte Carlo: convergence of Markov chains with approximate transition kernels. (2015) [Statistics and Computing.](http://link.springer.com/article/10.1007%2Fs11222-014-9521-x)
+Noisy Monte Carlo: convergence of Markov chains with approximate transition kernels (2015). [Statistics and Computing.](http://link.springer.com/article/10.1007%2Fs11222-014-9521-x)  
 
+***
 
 ### Background
 
-My PhD research focused on overcoming intractable likelihoods. 
+I obtained my PhD under the supervisor on [Nial Friel](http://mathsci.ucd.ie/~nial/) at [UCD](http://www.ucd.ie/) (2015). My PhD research focused on overcoming intractable likelihoods in Bayesian analysis.    
 
 <!--
 <div class="jumbotron">
