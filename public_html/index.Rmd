@@ -17,7 +17,7 @@ I am a Postdoctoral researcher in the [Insight Center for Data Analytics](https:
 
 ### Publications
 
-Noisy Monte Carlo: convergence of Markov chains with approximate transition kernels (2015). [Statistics and Computing.](http://link.springer.com/article/10.1007%2Fs11222-014-9521-x)  
+Noisy Monte Carlo: Convergence of Markov chains with approximate transition kernels (2015). [Statistics and Computing.](http://link.springer.com/article/10.1007%2Fs11222-014-9521-x)  
 
 ***
 
