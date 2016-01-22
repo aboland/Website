@@ -23,7 +23,7 @@ Noisy Monte Carlo: convergence of Markov chains with approximate transition kern
 
 ### Background
 
-I obtained my PhD under the supervisor on [Nial Friel](http://mathsci.ucd.ie/~nial/) at [UCD](http://www.ucd.ie/) (2015). My PhD research focused on overcoming intractable likelihoods in Bayesian analysis. I investigated using Markov Chain Monte Carlo to target tractable approximate posterior distributions which were 'close' to the true posterior distributions for Gibbs random fields. 
+I obtained my PhD under the supervisor of [Nial Friel](http://mathsci.ucd.ie/~nial/) at [UCD](http://www.ucd.ie/) (2015). My PhD research focused on overcoming intractable likelihoods in Bayesian analysis. I investigated using Markov Chain Monte Carlo to target tractable approximate posterior distributions which were 'close' to the true posterior distributions for Gibbs random fields. 
 
 <!--
 <div class="jumbotron">
