@@ -19,11 +19,20 @@ I am a Postdoctoral researcher in the [Insight Center for Data Analytics](https:
 
 Noisy Monte Carlo: Convergence of Markov chains with approximate transition kernels (2015). [Statistics and Computing.](http://link.springer.com/article/10.1007%2Fs11222-014-9521-x)  
 
+
+***
+
+### Teaching
+
+I was a tutor in [UCD](http://www.ucd.ie/) from 2010 until 2015, this involved taking small groups of students (10-30) through extra examples and homework solutions. Modules I covered included [Bayesian Statistics](https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&p_crse=40390), [Linear Models](https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&p_crse=30240) and [Actuarial Statistics](https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&p_crse=40160#bookmarkschedule).  
+
+I am currently lecturing [Practical Statistics](https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&p_crse=10050), which is an introductory statistics model. Topics covered in this module include [regression and correlation.](http://bayes2.ucd.ie:3838/aboland/STAT10050/) 
+
 ***
 
 ### Background
 
-I obtained my PhD under the supervisor of [Nial Friel](http://mathsci.ucd.ie/~nial/) at [UCD](http://www.ucd.ie/) (2015). My PhD research focused on overcoming intractable likelihoods in Bayesian analysis. I investigated using Markov Chain Monte Carlo to target tractable approximate posterior distributions which were 'close' to the true posterior distributions for Gibbs random fields. 
+I obtained my PhD under the supervision of [Nial Friel](http://mathsci.ucd.ie/~nial/) at [UCD](http://www.ucd.ie/) (2015). My PhD research focused on overcoming intractable likelihoods in Bayesian analysis. I investigated using Markov Chain Monte Carlo to target tractable approximate posterior distributions which were 'close' to the true posterior distributions for Gibbs random fields. 
 
 <!--
 <div class="jumbotron">
