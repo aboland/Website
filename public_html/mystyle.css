@@ -1,3 +1,5 @@
-body .main-container {
-max-width: auto;
+.main-container {
+max-width: 940px !important;
+margin-left: auto !important;
+margin-right: auto !important;
 }
