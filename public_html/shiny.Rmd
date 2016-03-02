@@ -1,0 +1,16 @@
+---
+output: 
+  html_document:
+    css: wide.css
+---
+
+<br>
+
+### [Sample Shiny app](http://shiny.rstudio.com/)
+
+<br>
+
+The app below was created using [R](https://www.r-project.org/) and [Shiny](http://shiny.rstudio.com/).
+
+<iframe src="http://bayes2.ucd.ie:3838/aboland/STAT10050/" style="border: none; width: 100%; height: 800px"></iframe>
+
