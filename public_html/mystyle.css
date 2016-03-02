@@ -1,5 +1,11 @@
 .main-container {
 max-width: 940px !important;
-margin-left: auto !important;
+margin-left: 200px !important;
 margin-right: auto !important;
+float: left; !important;
+}
+
+.leftsidebar {
+    width: 178px;
+    float: left;;
 }

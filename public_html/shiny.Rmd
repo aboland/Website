@@ -14,3 +14,5 @@ The app below was created using [R](https://www.r-project.org/) and [Shiny](http
 
 <iframe src="http://bayes2.ucd.ie:3838/aboland/STAT10050/" style="border: none; width: 100%; height: 800px"></iframe>
 
+
+</aside><aside id="twitter_timeline-3" class="widget widget_twitter_timeline"><a class="twitter-timeline" data-widget-id="641542099599511552" data-theme="light" data-link-color="#f96e5b" data-border-color="#e8e8e8" height="400" lang="EN">My Tweets</a></aside>
