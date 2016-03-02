@@ -1,10 +1,5 @@
 .main-container {
 max-width: 940px !important;
-margin-left: 200px !important;
+margin-left: 220px !important;
 margin-right: auto !important;
-}
-
-.leftsidebar {
-    width: 178px;
-    float: left;;
 }
