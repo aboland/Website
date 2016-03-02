@@ -37,36 +37,27 @@ I obtained my PhD under the supervision of [Nial Friel](http://mathsci.ucd.ie/~n
 
 <!--
 
-
-<style type = "text/css">
-.main-container {
+.leftbar {
     position:absolute;
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
-img { 
-  max-width:100%; 
-  height: auto; 
-}
-.left {
-    position:absolute;
-    width: 178px;
+    margin-left: 10px;
+    width: 200px;
     float: left; !important;
 }
 
-<div class="left">
+    </style>
+
+<div class="leftbar">
     <br>
     <center>
-    <p><img src="images/profile.jpg" width="100px" height="20px" /></p>
-    <br>
+        <p><img src="images/profile.jpg" width="100px" height="20px" /></p>
     </center>
+        <br>
+        <p>I am a Postdoctoral researcher in the <a href="https://www.insight-centre.org/">Insight Center for Data Analytics</a> at <a href="http://www.ucd.ie/">UCD</a> with <a href="http://mathsci.ucd.ie/~parnell_a/">Andrew Parnell</a> . My current project is in conjunction with <a href="http://clavisinsight.com/">Clavis-Insight</a> and focuses on machine learning algorithms, in particular supervised and unsupervised classification.</p>
+        <br>
+    <center>
     <a class="twitter-timeline" href="https://twitter.com/AidoBo" data-widget-id="705121660492488705">Tweets by @AidoBo</a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </center>
 </div>
 
 
