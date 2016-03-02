@@ -35,6 +35,13 @@ I am currently lecturing [Practical Statistics](https://sisweb.ucd.ie/usis/w_sm_
 I obtained my PhD under the supervision of [Nial Friel](http://mathsci.ucd.ie/~nial/) at [UCD](http://www.ucd.ie/) (2015). My PhD research focused on overcoming intractable likelihoods in Bayesian analysis. I investigated using Markov Chain Monte Carlo to target tractable approximate posterior distributions which were 'close' to the true posterior distributions for Gibbs random fields. 
 
 <!--
+***
+
+### [Sample Shiny app](http://shiny.rstudio.com/)
+
+<iframe src="http://bayes2.ucd.ie:3838/aboland/STAT10050/" style="border: none; width: 100%; height: 800px"></iframe>
+
+<!--
 <div class="jumbotron">
   <h2>Premier League Stats</h2>
   <p>Check out an R-Shiny app showing statistics from the premier league.</p>
