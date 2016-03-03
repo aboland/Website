@@ -37,11 +37,31 @@ I obtained my PhD under the supervision of [Nial Friel](http://mathsci.ucd.ie/~n
 
 <!--
 
+<style type = "text/css">
+.main-container {
+    position:absolute;
+  max-width: 940px;
+  margin-left: 21%;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+
+
 .leftbar {
     position:absolute;
-    margin-left: 10px;
-    width: 200px;
-    float: left; !important;
+    max-width: 20%;
+    float: left;
+    background-color: #e6e6e6;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 15px;
 }
 
     </style>
@@ -69,23 +89,4 @@ I obtained my PhD under the supervision of [Nial Friel](http://mathsci.ucd.ie/~n
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 
-<!--
-***
-
-### [Sample Shiny app](http://shiny.rstudio.com/)
-
-<iframe src="http://bayes2.ucd.ie:3838/aboland/STAT10050/" style="border: none; width: 100%; height: 800px"></iframe>
-
-<!--
-<div class="jumbotron">
-  <h2>Premier League Stats</h2>
-  <p>Check out an R-Shiny app showing statistics from the premier league.</p>
-  <p><a href="http://ff.aboland.ie" class="btn btn-primary btn-lg">Click here</a></p>
-</div>
-
-<div class="jumbotron">
-  <h2>Latent Dirichlet Allocation</h2>
-  <p>A brief overview of Latent Dirichlet Allocation.</p>
-  <p><a href="LDA_static.html" class="btn btn-primary btn-lg">Click here</a></p>
-</div>
 -->
