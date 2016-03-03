@@ -11,7 +11,24 @@ title: "Aidan Boland"
 <img src="images/profile.jpg" width="100px" height="20px" />  
 
 
-I am a Postdoctoral researcher in the [Insight Center for Data Analytics](https://www.insight-centre.org/) at [UCD](http://www.ucd.ie/) with [Andrew Parnell](http://mathsci.ucd.ie/~parnell_a/) . My current project is in conjunction with [Clavis-Insight](http://clavisinsight.com/) and focuses on machine learning algorithms, in particular supervised and unsupervised classification.  
+I am a Postdoctoral researcher in the [Insight Center for Data Analytics](https://www.insight-centre.org/) at [UCD](http://www.ucd.ie/) with [Andrew Parnell](http://mathsci.ucd.ie/~parnell_a/) . My current project is in conjunction with [Clavis-Insight](http://clavisinsight.com/) and focuses on machine learning algorithms, in particular supervised and unsupervised text classification.  
+
+***
+
+### Background
+
+I obtained my PhD from [UCD](http://www.ucd.ie/) under the supervision of [Nial Friel](http://mathsci.ucd.ie/~nial/) (2015). My PhD research focused on overcoming intractable likelihoods in Bayesian analysis. I investigated using Markov Chain Monte Carlo to target tractable approximate posterior distributions which were 'close' to the true posterior distributions for Gibbs random fields. 
+
+
+***
+
+### Teaching
+
+I am currently running and lecturing an introductory statistical module. The module is called [Practical Statistics](https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&p_crse=10050), topics covered include calculating summary statistics, graphs,  basic probability theory, confidence intervals, [regression and correlation.](http://bayes2.ucd.ie:3838/aboland/STAT10050/) The students are also thought the basics of [Minitab](https://www.minitab.com/en-us/) and [R](https://www.r-project.org/).
+
+
+I was a tutor in [UCD](http://www.ucd.ie/) from 2010 until 2015. Modules I covered included [Bayesian Statistics](https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&p_crse=40390), [Linear Models](https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&p_crse=30240) and [Actuarial Statistics](https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&p_crse=40160#bookmarkschedule). Each tutorial consisted of up to 30 students at a time. During tutor sessions, students were taken through extra examples  and homework solutions.
+
 
 ***
 
@@ -20,19 +37,6 @@ I am a Postdoctoral researcher in the [Insight Center for Data Analytics](https:
 Noisy Monte Carlo: Convergence of Markov chains with approximate transition kernels (2015). [Statistics and Computing.](http://link.springer.com/article/10.1007%2Fs11222-014-9521-x)  
 
 
-***
-
-### Teaching
-
-I was a tutor in [UCD](http://www.ucd.ie/) from 2010 until 2015, this involved taking small groups of students (10-30) through extra examples and homework solutions. Modules I covered included [Bayesian Statistics](https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&p_crse=40390), [Linear Models](https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&p_crse=30240) and [Actuarial Statistics](https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&p_crse=40160#bookmarkschedule).  
-
-I am currently lecturing [Practical Statistics](https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&p_crse=10050), which is an introductory statistics model. Topics covered in this module include [regression and correlation.](http://bayes2.ucd.ie:3838/aboland/STAT10050/) 
-
-***
-
-### Background
-
-I obtained my PhD under the supervision of [Nial Friel](http://mathsci.ucd.ie/~nial/) at [UCD](http://www.ucd.ie/) (2015). My PhD research focused on overcoming intractable likelihoods in Bayesian analysis. I investigated using Markov Chain Monte Carlo to target tractable approximate posterior distributions which were 'close' to the true posterior distributions for Gibbs random fields. 
 
 
 <!--
