@@ -17,7 +17,7 @@ I am a Postdoctoral researcher in the [Insight Center for Data Analytics](https:
 
 ### Background
 
-I obtained my PhD from [UCD](http://www.ucd.ie/) under the supervision of [Nial Friel](http://mathsci.ucd.ie/~nial/) (2015). My PhD research focused on overcoming intractable likelihoods in Bayesian analysis. I investigated using Markov Chain Monte Carlo to target tractable approximate posterior distributions which were 'close' to the true posterior distributions for Gibbs random fields. 
+I obtained my PhD from [UCD](http://www.ucd.ie/) under the supervision of [Nial Friel](http://mathsci.ucd.ie/~nial/) (2015). My PhD research focused on overcoming intractable likelihoods in Bayesian analysis. I investigated using Markov Chain Monte Carlo (MCMC) to target tractable approximate posterior distributions which were 'close' to the true posterior distributions for Gibbs random fields. I obtained empirical and theoretical results for a variety of these so called 'noisy' MCMC methods.
 
 
 ***
