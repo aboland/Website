@@ -34,7 +34,7 @@ I was a tutor in [UCD](http://www.ucd.ie/) from 2010 until 2015. Modules I cover
 
 ### Publications
 
-Noisy Monte Carlo: Convergence of Markov chains with approximate transition kernels (2015). [Statistics and Computing.](http://link.springer.com/article/10.1007%2Fs11222-014-9521-x)  
+Noisy Monte Carlo: Convergence of Markov chains with approximate transition kernels (2014). [Statistics and Computing.](http://link.springer.com/article/10.1007%2Fs11222-014-9521-x)  
 
 **Abstract**  
 *Monte Carlo algorithms often aim to draw from a distribution ππ by simulating a Markov chain with transition kernel $P$ such that $\pi$ is invariant under $P$. However, there are many situations for which it is impractical or impossible to draw from the transition kernel $P$. For instance, this is the case with massive datasets, where is it prohibitively expensive to calculate the likelihood and is also the case for intractable likelihood models arising from, for example, Gibbs random fields, such as those found in spatial statistics and network analysis. A natural approach in these cases is to replace $P$ by an approximation $\hat{P}$. Using theory from the stability of Markov chains we explore a variety of situations where it is possible to quantify how ‘close’ the chain given by the transition kernel $\hat{P}$ is to the chain given by $P$. We apply these results to several examples from spatial statistics and network analysis.*
