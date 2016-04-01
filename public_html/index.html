@@ -7,17 +7,18 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 
 <title>Aidan Boland</title>
 
-<script src="libs/jquery-1.11.0/jquery.min.js"></script>
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="libs/bootstrap-3.3.1/css/cerulean.min.css" rel="stylesheet" />
-<script src="libs/bootstrap-3.3.1/js/bootstrap.min.js"></script>
-<script src="libs/bootstrap-3.3.1/shim/html5shiv.min.js"></script>
-<script src="libs/bootstrap-3.3.1/shim/respond.min.js"></script>
+<link href="libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 
 <style type="text/css">
 
@@ -99,12 +100,55 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </script>
 
 
+
 <link rel="stylesheet" href="mystyle.css" type="text/css" />
 
 </head>
 
 <body>
 
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
 <style type = "text/css">
     .main-container {
         position:absolute;
@@ -147,7 +191,22 @@ img {
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </center>
 </div>
+
 <div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="libs/navigation-1.0/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
 
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -174,7 +233,7 @@ img {
               <li><a href="blank.html">Blank</a></li>
              <li class="divider"></li>
              -->
-                <li><a href="/docs/cv-WEB.pdf">CV</a></li>
+                <li><a href="/docs/cv-WEB-academic.pdf">CV (academic)</a></li>
             <li class="divider"></li>
             <li class="dropdown-header">Presentations</li>
                 <li><a href="/docs/CASI2015.pdf">CASI 2015</a></li>
@@ -197,22 +256,19 @@ img {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div id="header">
+<div class="fluid-row" id="header">
+
+
 <h1 class="title">Aidan Boland</h1>
+
 </div>
 
 
-<!--For an overview of Latent Dirichlet Allocation click [here](/LDA).  
 
- Check out an R-Shiny app showing [statistics from the premier league.](http://ff.aboland.ie) -->
-<!--![](images/profile.jpg =1000x200)-->
+
 
 <hr />
-<div id="background" class="section level3">
-<h3>Background</h3>
-<p>I obtained my PhD from <a href="http://www.ucd.ie/">UCD</a> under the supervision of <a href="http://mathsci.ucd.ie/~nial/">Nial Friel</a> (2015). My PhD research focused on overcoming intractable likelihoods in Bayesian analysis. I investigated using Markov Chain Monte Carlo (MCMC) to target tractable approximate posterior distributions which were ‘close’ to the true posterior distributions for Gibbs random fields. I obtained empirical and theoretical results for a variety of these so called ‘noisy’ MCMC methods.</p>
-<hr />
-</div>
+
 <div id="teaching" class="section level3">
 <h3>Teaching</h3>
 <p>I am currently running and lecturing an introductory statistical module. The module is called <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=10050">Practical Statistics</a>, topics covered include calculating summary statistics, graphs, basic probability theory, confidence intervals, <a href="http://bayes2.ucd.ie:3838/aboland/STAT10050/">regression and correlation.</a> The students are also thought the basics of <a href="https://www.minitab.com/en-us/">Minitab</a> and <a href="https://www.r-project.org/">R</a>.</p>
@@ -280,6 +336,8 @@ img {
 
 -->
 </div>
+
+
 
 
 </div>
