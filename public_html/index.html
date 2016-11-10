@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 
 
@@ -100,102 +100,103 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </script>
 
 
-
 <link rel="stylesheet" href="mystyle.css" type="text/css" />
 
 </head>
 
 <body>
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
-img {
-  max-width:100%;
-  height: auto;
-}
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-</style>
-<style type = "text/css">
-    .main-container {
-        position:absolute;
-        max-width: 940px;
-        margin-left: 21%;
-        margin-right: auto;
+    
+    <style type = "text/css">
+        .main-container {
+            max-width: 940px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    code {
+        color: inherit;
+        background-color: rgba(0, 0, 0, 0.04);
     }
-code {
-    color: inherit;
-    background-color: rgba(0, 0, 0, 0.04);
-}
-img {
-    max-width:100%;
-    height: auto;
-}
-
-
-.leftbar {
-    position:absolute;
-    max-width: 20%;
-    float: left;
-    background-color: #e6e6e6;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-left: 15px;
-}
-
+    img {
+        max-width:100%;
+        height: auto;
+    }
+    h1 {
+        font-size: 34px;
+    }
+    h1.title {
+        font-size: 38px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    h3 {
+        font-size: 24px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    h6 {
+        font-size: 12px;
+    }
+    .tabbed-pane {
+        padding-top: 12px;
+    }
+    button.code-folding-btn:focus {
+        outline: none;
+    }
     </style>
+    <style type = "text/css">
+        .main-container {
+            position:absolute;
+            max-width: 940px;
+            margin-left: 21%;
+            margin-right: auto;
+        }
+    code {
+        color: inherit;
+        background-color: rgba(0, 0, 0, 0.04);
+    }
+    img {
+        max-width:100%;
+        height: auto;
+    }
+    
+    
+    .leftbar {
+        position:absolute;
+        max-width: 20%;
+        float: left;
+        background-color: #e6e6e6;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-left: 15px;
+    }
+    
+        </style>
+    
+    <div class="leftbar">
+        <br>
+        <center>
+            <p><img src="images/profile.jpg" width="100px" height="20px" /></p>
+        </center>
+        <br>
+        <p>I am a Data Scientist with <a href="http://clavisinsight.com/">Clavis-Insight</a>. My work focuses on researching and implementing various statistical methods within eCommerce insights and analytics.</p>
+        <br>
+        <center>
+            <a class="twitter-timeline" href="https://twitter.com/AidoBo" data-widget-id="705121660492488705">Tweets by @AidoBo</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </center>
+    </div>
 
-<div class="leftbar">
-    <br>
-    <center>
-        <p><img src="images/profile.jpg" width="100px" height="20px" /></p>
-    </center>
-    <br>
-    <p>I am a Postdoctoral researcher in the <a href="https://www.insight-centre.org/">Insight Center for Data Analytics</a> at <a href="http://www.ucd.ie/">UCD</a> with <a href="http://mathsci.ucd.ie/~parnell_a/">Andrew Parnell</a> . My current project is in conjunction with <a href="http://clavisinsight.com/">Clavis-Insight</a> and focuses on machine learning algorithms, in particular supervised and unsupervised classification.</p>
-    <br>
-    <center>
-        <a class="twitter-timeline" href="https://twitter.com/AidoBo" data-widget-id="705121660492488705">Tweets by @AidoBo</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    </center>
-</div>
+
 
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-<script src="libs/navigation-1.0/tabsets.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
@@ -260,19 +261,27 @@ $(document).ready(function () {
 <div class="fluid-row" id="header">
 
 
-<h1 class="title">Aidan Boland</h1>
+
+<h1 class="title toc-ignore">Aidan Boland</h1>
 
 </div>
 
 
+<!--For an overview of Latent Dirichlet Allocation click [here](/LDA).  
 
-
+ Check out an R-Shiny app showing [statistics from the premier league.](http://ff.aboland.ie) -->
+<!--![](images/profile.jpg =1000x200)-->
 
 <hr />
-
+<div id="background" class="section level3">
+<h3>Background</h3>
+<p>I obtained my PhD from <a href="http://www.ucd.ie/">UCD</a> under the supervision of <a href="http://mathsci.ucd.ie/~nial/">Nial Friel</a> (2015). My PhD research focused on overcoming intractable likelihoods in Bayesian analysis. I investigated using Markov Chain Monte Carlo (MCMC) to target tractable approximate posterior distributions which were ‘close’ to the true posterior distributions for Gibbs random fields. I obtained empirical and theoretical results for a variety of these so called ‘noisy’ MCMC methods.</p>
+<p>I completed a year as a Postdoctoral researcher in the <a href="https://www.insight-centre.org/">Insight Center for Data Analytics</a> at <a href="http://www.ucd.ie/">UCD</a> with <a href="http://mathsci.ucd.ie/~parnell_a/">Andrew Parnell</a> (2016). The project was in conjunction with <a href="http://clavisinsight.com/">Clavis-Insight</a> and focused on machine learning algorithms, in particular supervised and unsupervised text classification.</p>
+<hr />
+</div>
 <div id="teaching" class="section level3">
 <h3>Teaching</h3>
-<p>I am currently running and lecturing an introductory statistical module. The module is called <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=10050">Practical Statistics</a>, topics covered include calculating summary statistics, graphs, basic probability theory, confidence intervals, <a href="http://bayes2.ucd.ie:3838/aboland/STAT10050/">regression and correlation.</a> The students are also thought the basics of <a href="https://www.minitab.com/en-us/">Minitab</a> and <a href="https://www.r-project.org/">R</a>.</p>
+<p>I previously lectured an introductory statistical module <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=10050">(Practical Statistics)</a> in <a href="http://www.ucd.ie/">UCD</a>. Topics covered included calculating summary statistics, graphs, basic probability theory, confidence intervals, <a href="http://bayes2.ucd.ie:3838/aboland/STAT10050/">regression and correlation.</a> The students were also thought the basics of <a href="https://www.minitab.com/en-us/">Minitab</a> and <a href="https://www.r-project.org/">R</a>.</p>
 <p>I was a tutor in <a href="http://www.ucd.ie/">UCD</a> from 2010 until 2015. Modules I covered included <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=40390">Bayesian Statistics</a>, <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=30240">Linear Models</a> and <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=40160#bookmarkschedule">Actuarial Statistics</a>. Each tutorial consisted of up to 30 students at a time. During tutor sessions, students were taken through extra examples and homework solutions.</p>
 <hr />
 </div>
