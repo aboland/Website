@@ -19,6 +19,9 @@
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<link href="libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="libs/highlightjs-1.1/highlight.js"></script>
 
 <style type="text/css">
 
@@ -82,10 +85,6 @@ body {
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
 
 <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet"
-      href="libs/highlight/default.css"
-      type="text/css" />
-<script src="libs/highlight/highlight.js"></script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
@@ -190,13 +189,14 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         </center>
     </div>
+    
+    
 
 
 
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-<script src="libs/navigation-1.1/tabsets.js"></script>
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
@@ -234,8 +234,8 @@ $(document).ready(function () {
               <li><a href="blank.html">Blank</a></li>
              <li class="divider"></li>
              -->
-                <li><a href="/docs/cv-WEB-industry.pdf">CV (industry)</a></li>
                 <li><a href="/docs/cv-WEB-academic.pdf">CV (academic)</a></li>
+                <li><a href="/docs/cv-WEB-industry.pdf">CV (industry)</a></li>
             <li class="divider"></li>
             <li class="dropdown-header">Presentations</li>
                 <li><a href="/docs/CASI2015.pdf">CASI 2015</a></li>
@@ -249,6 +249,7 @@ $(document).ready(function () {
              <li class="dropdown-header">Other Sites</li>
                 <li><a href="http://bayes2.ucd.ie:3838/aboland/STAT10050/">Teaching App</a></li>
                 <li><a href="http://ff.aboland.ie">Premier League Stats</a></li>
+                <li><a href="http://gaa.aboland.ie">GAA Stats</a></li>
           </ul>
         </li>
         <li><a href="/shiny.html">Sample Shiny App</a></li>
@@ -271,7 +272,6 @@ $(document).ready(function () {
 
  Check out an R-Shiny app showing [statistics from the premier league.](http://ff.aboland.ie) -->
 <!--![](images/profile.jpg =1000x200)-->
-
 <hr />
 <div id="background" class="section level3">
 <h3>Background</h3>
@@ -355,9 +355,13 @@ img {
 <script>
 
 // add bootstrap table styles to pandoc tables
-$(document).ready(function () {
+function bootstrapStylePandocTables() {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
 });
+
 
 </script>
 

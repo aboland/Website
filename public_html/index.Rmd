@@ -11,7 +11,8 @@ title: "Aidan Boland"
 <img src="images/profile.jpg" width="100px" height="20px" />  
 
 
-I am a Data Scientist with [Clavis-Insight](http://clavisinsight.com/). My work focuses on researching and implementing various statistical methods within eCommerce insights and analytics.
+
+I am currently working as a Data Scientist with [Clavis-Insight](http://clavisinsight.com/), a leading firm in eCommerce insights and analytics. My work focuses on researching and implementing statistical techniques to improve processes within the company.
 
 ***
 
