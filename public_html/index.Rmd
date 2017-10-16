@@ -35,6 +35,7 @@ I was a tutor in [UCD](http://www.ucd.ie/) from 2010 until 2015. Modules I cover
 
 ***
 
+
 ### Publications
 
 **Efficient MCMC for Gibbs Random Fields using pre-computation (2017 preprint)**. [arXiv.](https://arxiv.org/abs/1710.04093)
