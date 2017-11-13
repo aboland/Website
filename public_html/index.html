@@ -84,6 +84,33 @@ body {
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
 
+<style type = "text/css">
+    .leftbar {
+        position:absolute;
+        max-width: 20%;
+        float: left;
+        background-color: #e6e6e6;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-left: 15px;
+    }
+    
+        </style>
+    
+    <div class="leftbar">
+        <br>
+        <center>
+            <p><img src="images/profile.jpg" width="100px" height="20px" /></p>
+        </center>
+        <br>
+        <p>I am currently working as a Data Scientist with <a href="http://clavisinsight.com/">Clavis-Insight</a>, a leading firm in eCommerce insights and analytics. My work focuses on researching and implementing statistical techniques to improve processes within the company.</p>
+        <br>
+        <center>
+            <a class="twitter-timeline" href="https://twitter.com/AidoBo" data-widget-id="705121660492488705">Tweets by @AidoBo</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </center>
+    </div>
+
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
   pre:not([class]) {
@@ -153,32 +180,7 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
-
-.leftbar {
-    position:absolute;
-    max-width: 20%;
-    float: left;
-    background-color: #e6e6e6;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-left: 15px;
-}
-
-    </style>
-
-<div class="leftbar">
-    <br>
-    <center>
-        <p><img src="images/profile.jpg" width="100px" height="20px" /></p>
-    </center>
-    <br>
-    <p>I am currently working as a Data Scientist with <a href="http://clavisinsight.com/">Clavis-Insight</a>, a leading firm in eCommerce insights and analytics. My work focuses on researching and implementing statistical techniques to improve processes within the company.</p>
-    <br>
-    <center>
-        <a class="twitter-timeline" href="https://twitter.com/AidoBo" data-widget-id="705121660492488705">Tweets by @AidoBo</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    </center>
-</div>
+</style>
 
 
 
@@ -198,6 +200,8 @@ $(document).ready(function () {
 
 
 
+
+    
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -226,6 +230,7 @@ $(document).ready(function () {
                 <li><a href="/docs/cv-WEB-industry.pdf">CV (industry)</a></li>
             <li class="divider"></li>
             <li class="dropdown-header">Presentations</li>
+                <li><a href="/docs/EARL2017.pdf">EARL Boston 2017</a></li>
                 <li><a href="/docs/CASI2015.pdf">CASI 2015</a></li>
                 <li><a href="/docs/RSC2014.pdf">RSC 2014</a></li>
             <li class="divider"></li>
@@ -260,7 +265,13 @@ $(document).ready(function () {
 
  Check out an R-Shiny app showing [statistics from the premier league.](http://ff.aboland.ie) -->
 <!--![](images/profile.jpg =1000x200)-->
+<!-- this is in the in_header.html file
 
+<img src="images/profile.jpg" width="100px" height="20px" />  
+
+I am currently working as a Data Scientist with [Clavis-Insight](http://clavisinsight.com/), a leading firm in eCommerce insights and analytics. My work focuses on researching and implementing statistical techniques to improve processes within the company.
+
+-->
 <hr />
 <div id="background" class="section level3">
 <h3>Background</h3>

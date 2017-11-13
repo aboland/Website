@@ -8,12 +8,14 @@ title: "Aidan Boland"
  Check out an R-Shiny app showing [statistics from the premier league.](http://ff.aboland.ie) -->
 
 <!--![](images/profile.jpg =1000x200)-->
+
+<!-- this is in the in_header.html file
+
 <img src="images/profile.jpg" width="100px" height="20px" />  
-
-
 
 I am currently working as a Data Scientist with [Clavis-Insight](http://clavisinsight.com/), a leading firm in eCommerce insights and analytics. My work focuses on researching and implementing statistical techniques to improve processes within the company.
 
+-->
 ***
 
 ### Background
