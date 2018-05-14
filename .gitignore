@@ -1,5 +1,8 @@
 temp\
-temp_dir\
+temp_dir
 temp\*
 temp_dir\*
 .Rproj.user
+.Rhistory
+Website.Rproj
+public_html/images/profile_new.jpg
