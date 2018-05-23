@@ -6,3 +6,4 @@ temp_dir\*
 .Rhistory
 Website.Rproj
 public_html/images/profile_new.jpg
+.DS_Store
