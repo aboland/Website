@@ -40,7 +40,7 @@ I was a tutor in [UCD](http://www.ucd.ie/) from 2010 until 2015. Modules I cover
 
 ### Publications
 
-**Efficient MCMC for Gibbs Random Fields using pre-computation (2017 preprint)**. [arXiv.](https://arxiv.org/abs/1710.04093)
+**Efficient MCMC for Gibbs Random Fields using pre-computation (2018 preprint)**. [arXiv.](https://arxiv.org/abs/1710.04093)
 
 **Abstract**  
 *Bayesian inference of Gibbs random fields (GRFs) is often referred to as a doubly intractable problem, since the likelihood function is intractable. The exploration of the posterior distribution of such models is typically carried out with a sophisticated Markov chain Monte Carlo (MCMC) method, the exchange algorithm (Murray et al., 2006), which requires simulations from the likelihood function at each iteration. The purpose of this paper is to consider an approach to dramatically reduce this computational overhead. To this end we introduce a novel class of algorithms which use realizations of the GRF model, simulated offline, at locations specified by a grid that spans the parameter space. This strategy speeds up dramatically the posterior inference, as illustrated on several examples. However, using the pre-computed graphs introduces a noise in the MCMC algorithm, which is no longer exact. We study the theoretical behaviour of the resulting approximate MCMC algorithm and derive convergence bounds using a recent theoretical development on approximate MCMC methods.*  
