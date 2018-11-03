@@ -1,0 +1,56 @@
+---
+title: "Tidy Tuesday"
+---
+
+***
+
+<a href="https://github.com/rfordatascience/tidytuesday" target="_blank">Tidy Tuesday</a> is a weekly data project aimed at the R users. It is organised by the <a href="https://twitter.com/R4DScommunity" target="_blank">R4DS</a> community.  
+It is a great way of practicing with various forms of data.  
+
+My latest attempt was with the data in
+<a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018-10-09" target="_blank">week 28</a>,
+which was voter turnout data from 1980 to 2014 for the USA. It included the number of age-eligible voters versus total ballots/votes counted by state and year.  
+
+<br>  
+
+### Previous Weeks
+[Week 5 - US Census Data](tidytuesday/week5.html)
+
+<br>  
+
+### Week 28  
+
+The animation shows the number of elgible voters versus the number of votes over time.  
+
+```{r week28_code, warning=FALSE, message=FALSE, error=FALSE, fig.align='center',echo=FALSE, cache=TRUE}
+library(tidyverse)
+library(gganimate)
+library(scales)
+
+ # Load data
+voter_data <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018-10-09/voter_turnout.csv")
+
+ # Remove unwanted entries
+state_data <- voter_data %>% 
+  filter(!state %in% c("United States", "United States (Excl. Louisiana)"))
+
+ # Create base plot for animation
+votes_vs_eligible <- ggplot(state_data, aes(votes, eligible_voters, colour = state)) +
+  geom_point(show.legend = FALSE) + theme_light() +
+  scale_y_continuous(labels = comma_format()) +
+  scale_x_continuous(labels = comma_format()) +
+  labs(title = 'Eligible voters vs Number of votes', 
+       subtitle = 'Year: {frame_time}',
+       y = 'Eligible voters', x = 'Votes') +
+  # extra lines needed for animation are below
+  transition_time(year) +
+  ease_aes('quartic-in-out')  # determines how points will move
+
+animate(votes_vs_eligible, fps = 7.5)  # create the animation
+```
+
+
+
+### Code
+```{r ref.label="week28_code", eval=FALSE}
+```
