@@ -11,7 +11,7 @@
 
 
 
-<title>Aidan Boland</title>
+<title>Tidy Tuesday</title>
 
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -260,11 +260,10 @@ $(document).ready(function () {
         <li class="dropdown">
             <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tidy Tuesday <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="tt_home.html" target="_blank">About</a></li>
+            <li><a href="tt_home.html">About</a></li>
             <li class="divider"></li>
-            <li><a href="tidytuesday/week28.html" target="_blank">Week 28</a></li>
-            <li><a href="tidytuesday/week26.html" target="_blank">Week 26</a></li>
-            <li><a href="tidytuesday/week5.html" target="_blank">Week 5 - Census Data</a></li>
+            <li><a href="tidytuesday/week28.html">Week 28 - US Voter Data</a></li>
+            <li><a href="tidytuesday/week5.html">Week 5 - US Census Data</a></li>
           </ul>
         </li>
         
@@ -288,105 +287,52 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Aidan Boland</h1>
+<h1 class="title toc-ignore">Tidy Tuesday</h1>
 
 </div>
 
 
-<!--For an overview of Latent Dirichlet Allocation click [here](/LDA).  
-
- Check out an R-Shiny app showing [statistics from the premier league.](http://ff.aboland.ie) -->
-<!--![](images/profile.jpg =1000x200)-->
-<!-- this is in the in_header.html file
-
-<img src="images/profile.jpg" width="100px" height="20px" />  
-
-I am currently working as a Data Scientist with [Clavis-Insight](http://clavisinsight.com/), a leading firm in eCommerce insights and analytics. My work focuses on researching and implementing statistical techniques to improve processes within the company.
-
--->
 <hr />
-<div id="background" class="section level3">
-<h3>Background</h3>
-<p>I obtained my PhD from <a href="http://www.ucd.ie/">UCD</a> under the supervision of <a href="http://mathsci.ucd.ie/~nial/">Nial Friel</a> (2015). My PhD research focused on overcoming intractable likelihoods in Bayesian analysis. I investigated using Markov Chain Monte Carlo (MCMC) to target tractable approximate posterior distributions which were ‘close’ to the true posterior distributions for Gibbs random fields. I obtained empirical and theoretical results for a variety of these so called ‘noisy’ MCMC methods.</p>
-<p>I completed a year as a Postdoctoral researcher in the <a href="https://www.insight-centre.org/">Insight Center for Data Analytics</a> at <a href="http://www.ucd.ie/">UCD</a> with <a href="http://mathsci.ucd.ie/~parnell_a/">Andrew Parnell</a> (2016). The project was in conjunction with <a href="http://clavisinsight.com/">Clavis-Insight</a> and focused on machine learning algorithms, in particular supervised and unsupervised text classification.</p>
-<hr />
+<p><a href="https://github.com/rfordatascience/tidytuesday" target="_blank">Tidy Tuesday</a> is a weekly data project aimed at the R users. It is organised by the <a href="https://twitter.com/R4DScommunity" target="_blank">R4DS</a> community.<br />
+It is a great way of practicing with various forms of data.</p>
+<p>My latest attempt was with the data in <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018-10-09" target="_blank">week 28</a>, which was voter turnout data from 1980 to 2014 for the USA. It included the number of age-eligible voters versus total ballots/votes counted by state and year.</p>
+<p><br></p>
+<div id="previous-weeks" class="section level3">
+<h3>Previous Weeks</h3>
+<p><a href="tidytuesday/week5.html">Week 5 - US Census Data</a></p>
+<p><br></p>
 </div>
-<div id="teaching" class="section level3">
-<h3>Teaching</h3>
-<p>I previously lectured an introductory statistical module <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=10050">(Practical Statistics)</a> in <a href="http://www.ucd.ie/">UCD</a>. Topics covered included calculating summary statistics, graphs, basic probability theory, confidence intervals, <a href="http://bayes2.ucd.ie:3838/aboland/STAT10050/">regression and correlation.</a> The students were also thought the basics of <a href="https://www.minitab.com/en-us/">Minitab</a> and <a href="https://www.r-project.org/">R</a>.</p>
-<p>I was a tutor in <a href="http://www.ucd.ie/">UCD</a> from 2010 until 2015. Modules I covered included <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=40390">Bayesian Statistics</a>, <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=30240">Linear Models</a>, <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=20110">Probability Theory</a>, <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=30010">Time Series</a>, <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=40180">Data Programming</a> and <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=40160#bookmarkschedule">Actuarial Statistics</a>.</p>
-<hr />
+<div id="week-28" class="section level3">
+<h3>Week 28</h3>
+<p>The animation shows the number of elgible voters versus the number of votes over time.</p>
+<p><img src="tt_home_files/figure-html/week28_code-1.gif" style="display: block; margin: auto;" /></p>
 </div>
-<div id="publications" class="section level3">
-<h3>Publications</h3>
-<p><strong>Efficient MCMC for Gibbs Random Fields using pre-computation (2018 preprint)</strong>. <a href="https://arxiv.org/abs/1710.04093">arXiv.</a></p>
-<p><strong>Abstract</strong><br />
-<em>Bayesian inference of Gibbs random fields (GRFs) is often referred to as a doubly intractable problem, since the likelihood function is intractable. The exploration of the posterior distribution of such models is typically carried out with a sophisticated Markov chain Monte Carlo (MCMC) method, the exchange algorithm (Murray et al., 2006), which requires simulations from the likelihood function at each iteration. The purpose of this paper is to consider an approach to dramatically reduce this computational overhead. To this end we introduce a novel class of algorithms which use realizations of the GRF model, simulated offline, at locations specified by a grid that spans the parameter space. This strategy speeds up dramatically the posterior inference, as illustrated on several examples. However, using the pre-computed graphs introduces a noise in the MCMC algorithm, which is no longer exact. We study the theoretical behaviour of the resulting approximate MCMC algorithm and derive convergence bounds using a recent theoretical development on approximate MCMC methods.</em><br />
-<br></p>
-<p><strong>Noisy Monte Carlo: Convergence of Markov chains with approximate transition kernels (2014)</strong>. <a href="http://link.springer.com/article/10.1007%2Fs11222-014-9521-x">Statistics and Computing.</a></p>
-<p><strong>Abstract</strong><br />
-<em>Monte Carlo algorithms often aim to draw from a distribution ππ by simulating a Markov chain with transition kernel <span class="math inline">\(P\)</span> such that <span class="math inline">\(\pi\)</span> is invariant under <span class="math inline">\(P\)</span>. However, there are many situations for which it is impractical or impossible to draw from the transition kernel <span class="math inline">\(P\)</span>. For instance, this is the case with massive datasets, where is it prohibitively expensive to calculate the likelihood and is also the case for intractable likelihood models arising from, for example, Gibbs random fields, such as those found in spatial statistics and network analysis. A natural approach in these cases is to replace <span class="math inline">\(P\)</span> by an approximation <span class="math inline">\(\hat{P}\)</span>. Using theory from the stability of Markov chains we explore a variety of situations where it is possible to quantify how ‘close’ the chain given by the transition kernel <span class="math inline">\(\hat{P}\)</span> is to the chain given by <span class="math inline">\(P\)</span>. We apply these results to several examples from spatial statistics and network analysis.</em><br />
-<br></p>
-<div id="statistical-consultation" class="section level4">
-<h4>Statistical Consultation</h4>
-<p><strong>The prognostic utility of the transcription factor SRF in docetaxel-resistant prostate cancer: in-vitro discovery and in-vivo validation (2017).</strong> <a href="https://doi.org/10.1186/s12885-017-3100-4">BMC Cancer.</a></p>
-<p><strong>The Effect of Hand Dominance on Functional Outcome Following Single Row Rotator Cuff Repair (2017).</strong> <a href="http://doi.org/10.2174/1874325001611010562">The Open Orthopaedics Journal.</a></p>
-<!--
+<div id="code" class="section level3">
+<h3>Code</h3>
+<pre class="r"><code>library(tidyverse)
+library(gganimate)
+library(scales)
 
-<style type = "text/css">
-.main-container {
-    position:absolute;
-  max-width: 940px;
-  margin-left: 21%;
-  margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
-img {
-  max-width:100%;
-  height: auto;
-}
+ # Load data
+voter_data &lt;- read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018-10-09/voter_turnout.csv&quot;)
 
+ # Remove unwanted entries
+state_data &lt;- voter_data %&gt;% 
+  filter(!state %in% c(&quot;United States&quot;, &quot;United States (Excl. Louisiana)&quot;))
 
-.leftbar {
-    position:absolute;
-    max-width: 20%;
-    float: left;
-    background-color: #e6e6e6;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-left: 15px;
-}
+ # Create base plot for animation
+votes_vs_eligible &lt;- ggplot(state_data, aes(votes, eligible_voters, colour = state)) +
+  geom_point(show.legend = FALSE) + theme_light() +
+  scale_y_continuous(labels = comma_format()) +
+  scale_x_continuous(labels = comma_format()) +
+  labs(title = &#39;Eligible voters vs Number of votes&#39;, 
+       subtitle = &#39;Year: {frame_time}&#39;,
+       y = &#39;Eligible voters&#39;, x = &#39;Votes&#39;) +
+  # extra lines needed for animation are below
+  transition_time(year) +
+  ease_aes(&#39;quartic-in-out&#39;)  # determines how points will move
 
-    </style>
-
-<div class="leftbar">
-    <br>
-    <center>
-        <p><img src="images/profile.jpg" width="100px" height="20px" /></p>
-    </center>
-        <br>
-        <p>I am a Postdoctoral researcher in the <a href="https://www.insight-centre.org/">Insight Center for Data Analytics</a> at <a href="http://www.ucd.ie/">UCD</a> with <a href="http://mathsci.ucd.ie/~parnell_a/">Andrew Parnell</a> . My current project is in conjunction with <a href="http://clavisinsight.com/">Clavis-Insight</a> and focuses on machine learning algorithms, in particular supervised and unsupervised classification.</p>
-        <br>
-    <center>
-    <a class="twitter-timeline" href="https://twitter.com/AidoBo" data-widget-id="705121660492488705">Tweets by @AidoBo</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    </center>
-</div>
-
-
-
-### Twitter
-
-
-<a class="twitter-timeline" href="https://twitter.com/AidoBo" data-widget-id="705121660492488705">Tweets by @AidoBo</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
--->
-</div>
+animate(votes_vs_eligible, fps = 7.5)  # create the animation</code></pre>
 </div>
 
 
