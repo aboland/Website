@@ -1,0 +1,102 @@
+---
+title: "Week 30"
+---
+
+***
+
+### Data
+
+[Week 30](https://github.com/rfordatascience/tidytuesday/tree/master/data/2018-10-23) of tidy Tuesday is data from
+<a href="https://www.the-numbers.com/" target="_blank">the-numbers.com</a>.
+It documents movies and their profit/cost.
+
+
+### Plotly
+
+The <a href="https://plot.ly/r/" target="_blank">plotly</a> library creates interactive graphs. Graphs can be created using base R graphics or using
+<a href="https://ggplot2.tidyverse.org/" target="_blank">ggplot2</a>.  
+
+The graph below shows the median production cost of movies by genre and year. Genre's can be hidden interactively.  
+<br>
+
+
+```{r load and tidy, warning=FALSE, message=FALSE, error=FALSE, echo=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library(plotly)
+
+ # Read data
+horror_movie <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018-10-23/movie_profit.csv")
+
+ # Tidy dates and calculate return
+horror_movie <- horror_movie %>% select(-X1) %>%
+  mutate(release_date = lubridate::mdy(release_date), 
+         release_year = lubridate::year(release_date),
+         return = worldwide_gross - production_budget)
+
+  # Aggregate and summarise data by year and genre
+horror_movie %>% 
+  group_by(release_year, genre) %>%
+  summarise(avg_return = mean(return), 
+            median_return = median(return),
+            avg_production = mean(production_budget), 
+            median_production = median(production_budget),
+            avg_gross = mean(worldwide_gross), 
+            median_gross = median(worldwide_gross)) -> movie_agg
+```
+
+
+```{r main plotly, fig.align='center', echo=FALSE}
+  # ggplot of median production cost versus year by genre
+yearly_cost_plot <- movie_agg %>% ggplot(aes(release_year, median_production, colour=genre)) +
+  geom_line() +
+  scale_y_continuous(labels = dollar_format(scale=0.000001, suffix="M")) +  # Change y-axis labels to dollars
+  ylab(NULL) + xlab("Year") + 
+  labs(colour=NULL) +  # remove legend title
+  ggtitle("Median Production Cost")
+
+ # Create plotly graph
+yearly_cost_plotly <- ggplotly(yearly_cost_plot) %>% 
+  layout(margin = list(l = 45))  # add extra space on left for axis labels
+
+shiny::div(yearly_cost_plotly, 
+           align = "center")  # need the div function to centre the graph on the webpage
+```
+
+<br>
+
+## Code
+
+### Loading and tidying data
+
+```{r ref.label="load and tidy", eval=FALSE}
+```
+
+
+### ggplot graph
+
+```{r graph data, fig.align='center'}
+  # ggplot of median production cost versus year by genre
+yearly_cost_plot <- movie_agg %>% ggplot(aes(release_year, median_production, colour=genre)) +
+  geom_line() +
+  scale_y_continuous(labels = dollar_format(scale=0.000001, suffix="M")) +  # Change y-axis labels to dollars
+  ylab(NULL) + xlab("Year") + 
+  labs(colour=NULL) +  # remove legend title
+  ggtitle("Median Production Cost")
+
+yearly_cost_plot
+```
+
+
+### plotly graph
+
+After creating a ggplot graph, the `ggplotly` function will create a plotly version of the ggplot.
+
+```{r plotly graph, fig.align='center'}
+ # Create plotly graph
+yearly_cost_plotly <- ggplotly(yearly_cost_plot) %>% 
+  layout(margin = list(l = 45))  # add extra space on left for axis labels
+
+shiny::div(yearly_cost_plotly, align = "center")  # need the div function to centre the graph on the webpage
+```

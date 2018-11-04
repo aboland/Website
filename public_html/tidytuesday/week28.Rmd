@@ -4,8 +4,12 @@ title: "Week 28"
 
 ***
 
+### Data
 
-## Animation
+<a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018-10-09" target="_blank">Week 28</a>
+of tidy Tuesday is a dataset containing the number of age-eligible voters versus total ballots/votes counted by state and year.
+
+### Animation
 
 Using the
 <a href="https://github.com/thomasp85/gganimate" target="_blank">gganimate</a>
@@ -39,7 +43,7 @@ animate(votes_vs_eligible, fps = 7.5)  # create the animation
 ```
 
 
-### Code
+## Code
 
 ```{r ref.label="week28_code", eval=FALSE}
 ```

@@ -198,6 +198,7 @@ $(document).ready(function () {
           <ul class="dropdown-menu" role="menu">
             <li><a href="../tt_home.html">About</a></li>
             <li class="divider"></li>
+            <li><a href="week30.html">Week 30 -  Movie Data</a></li>
             <li><a href="week28.html">Week 28 -  US Voter Data</a></li>
             <li><a href="week5.html">Week 5 - US Census Data</a></li>
           </ul>
@@ -229,12 +230,17 @@ $(document).ready(function () {
 
 
 <hr />
-<div id="animation" class="section level2">
-<h2>Animation</h2>
+<div id="data" class="section level3">
+<h3>Data</h3>
+<p><a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018-10-09" target="_blank">Week 28</a> of tidy Tuesday is a dataset containing the number of age-eligible voters versus total ballots/votes counted by state and year.</p>
+</div>
+<div id="animation" class="section level3">
+<h3>Animation</h3>
 <p>Using the <a href="https://github.com/thomasp85/gganimate" target="_blank">gganimate</a> library, I created an animation over time of the number of eligible voters versus the number of votes.</p>
 <p><img src="week28_files/figure-html/week28_code-1.gif" style="display: block; margin: auto;" /></p>
-<div id="code" class="section level3">
-<h3>Code</h3>
+</div>
+<div id="code" class="section level2">
+<h2>Code</h2>
 <pre class="r"><code>library(tidyverse)
 library(gganimate)
 library(scales)
@@ -261,7 +267,6 @@ votes_vs_eligible &lt;- ggplot(state_data, aes(votes, eligible_voters, colour = 
 animate(votes_vs_eligible, fps = 7.5)  # create the animation</code></pre>
 <p><br><br />
 <br></p>
-</div>
 <div id="twitter" class="section level3">
 <h3>Twitter</h3>
 <div align="center">
