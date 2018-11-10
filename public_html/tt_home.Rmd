@@ -16,6 +16,7 @@ library to create an animated plot.
 <br>  
 
 ### Previous Weeks
+[Week 32 - US Turbine Data](tidytuesday/week32.html)  
 [Week 30 - Movie Data](tidytuesday/week30.html)  
 [Week 28 - US Voter Data](tidytuesday/week28.html)  
 [Week 5 - US Census Data](tidytuesday/week5.html)
