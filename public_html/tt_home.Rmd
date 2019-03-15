@@ -7,15 +7,10 @@ title: "Tidy Tuesday"
 <a href="https://github.com/rfordatascience/tidytuesday" target="_blank">Tidy Tuesday</a> is a weekly data project aimed at the R users. It is organised by the <a href="https://twitter.com/R4DScommunity" target="_blank">R4DS</a> community.  
 It is a great way of practicing with differnt types of data and using different techniques. Wrangling, tidying, plotting and modelling different types of data.  
 
-One my latest attempt was in
-<a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018-10-09" target="_blank">week 28 (09/10/2018)</a>,
-which was voter turnout data from 1980 to 2014 for the USA. It included the number of age-eligible voters versus total ballots/votes counted by state and year. I decided to try and use the
-<a href="https://github.com/thomasp85/gganimate" target="_blank">gganimate</a>
-library to create an animated plot.
-
 <br>  
 
-### Previous Weeks
+### My Attempts
+#### 2018
 [Week 32 - US Turbine Data](tidytuesday/week32.html)  
 [Week 30 - Movie Data](tidytuesday/week30.html)  
 [Week 28 - US Voter Data](tidytuesday/week28.html)  
@@ -25,6 +20,12 @@ library to create an animated plot.
 
 ### Week 28  
 
+One of my attempts was in
+<a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-10-09" target="_blank">week 28 in 2018 (09/10/2018)</a>,
+which was voter turnout data from 1980 to 2014 for the USA. It included the number of age-eligible voters versus total ballots/votes counted by state and year. I decided to try and use the
+<a href="https://github.com/thomasp85/gganimate" target="_blank">gganimate</a>
+library to create an animated plot.  
+
 The animation shows the number of elgible voters versus the number of votes over time.  
 
 ```{r week28_code, warning=FALSE, message=FALSE, error=FALSE, fig.align='center',echo=FALSE}
@@ -33,7 +34,7 @@ library(gganimate)
 library(scales)
 
  # Load data
-voter_data <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018-10-09/voter_turnout.csv")
+voter_data <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018/2018-10-09/voter_turnout.csv")
 
  # Remove unwanted entries
 state_data <- voter_data %>% 

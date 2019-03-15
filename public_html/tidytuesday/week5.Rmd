@@ -1,12 +1,12 @@
 ---
-title: "Week5"
+title: "Week 5 - 2018"
 ---
 
 ***
 
 ### Data
 
-The data for tidy tuesday week 5 is [US census data](https://github.com/rfordatascience/tidytuesday/tree/master/data/2018-04-30). The data contains information at a county level for a number of different variables/factors, such as population, income, and employment. More information on the dat acan be found [here](https://www.kaggle.com/muonneutrino/us-census-demographic-data).
+The data for tidy tuesday week 5 is [US census data](https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-04-30). The data contains information at a county level for a number of different variables/factors, such as population, income, and employment. More information on the dat acan be found [here](https://www.kaggle.com/muonneutrino/us-census-demographic-data).
 
 
 ### Map plot
@@ -18,22 +18,23 @@ library can be used to create plots of geographical data.
 I decided to create a function which would plot the data on a map. The function takes any of the numerical variables in the data and will output a heatmap of that variable.
 
 ```{r county plots, warning=FALSE, message=FALSE, fig.align='center', echo=FALSE}
+library(readr)
 library(dplyr)
 library(ggplot2)
 library(maps)
 library(scales)
 
-tidy_tuesday5 <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018-04-30/week5_acs2015_county_data.csv")
+tidy_tuesday5 <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018/2018-04-30/week5_acs2015_county_data.csv")
 
  # County map data
 counties <- map_data("county")
 
  # Combined county data
 all_county <- tidy_tuesday5 %>% 
-  mutate(County=tolower(County), State=tolower(State)) %>%
-  inner_join(counties, by=c("County" = "subregion", "State" = "region"))
+  mutate(County = tolower(County), State = tolower(State)) %>%
+  inner_join(counties, by = c("County" = "subregion", "State" = "region"))
 
-county_plot <- function(x, legend_format=number){
+county_plot <- function(x, legend_format = number){
   ggplot(data = all_county, mapping = aes(x = long, y = lat, group = group)) + 
     coord_fixed(1.3) + 
     geom_polygon(aes_string(fill = x), color = "grey", size = 0.05) +
@@ -42,7 +43,7 @@ county_plot <- function(x, legend_format=number){
     theme(plot.margin = unit(c(0,0,0,0), "cm"))
 }
 
-county_plot("Income", dollar)
+county_plot("Income", dollar)  # the second argument can be used to format the legend (see `scales` package)
 county_plot("MeanCommute", number_format(suffix = " mins"))
 ```
 

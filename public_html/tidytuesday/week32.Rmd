@@ -1,20 +1,26 @@
 ---
-title: "Week 32 - US Wind Turbine Data"
+title: "Week 32 - 2018"
 ---
 
 ***
   
+## US Wind Turbine Data
+<br>
+
 ```{r setup, echo=FALSE}
 knitr::opts_chunk$set(echo = TRUE, fig.width=9, fig.height=5, 
                       fig.align='center',
                       warning=FALSE, error=FALSE, message=FALSE)
 ```
 
-Tidy Tuesday <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018-11-06" target="_blank">Week 32</a>
+Tidy Tuesday <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2017/2018-11-06" target="_blank">Week 32</a>
 is wind turbine location and characteristic data from across the USA.  
 A data dictionary can be found
-<a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018-11-06" target="_blank">here.</a>  
+<a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-11-06" target="_blank">here.</a>  
 <br>  
+
+
+## Code Walkthrough
 
 For this weeks dataset, I decided to document my data exploration in an
 <a href="https://rmarkdown.rstudio.com/" target="_blank">R markdown</a>
@@ -27,17 +33,18 @@ document.
 <br>  
 
 
-## Exploring the data
+### Exploring the data
 
 ```{r libraries, warning=FALSE, message=FALSE}
 library(tidyverse)
 library(ggplot2)
 library(scales)
 library(xtable)
+theme_set(theme_light())  # Set ggplot theme globally
 ```
 Having viewed the data dictionary, we see that missing values take three different forms, "n/a", "-9999", and "missing". These can be used when reading in the data.  
 ```{r read in data, warning=FALSE, message=FALSE}
-raw_data <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018-11-06/us_wind.csv", na=c("n/a", "-9999", "missing"))
+raw_data <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018/2018-11-06/us_wind.csv", na = c("n/a", "-9999", "missing"))
 ```
 <br>  
 
@@ -51,37 +58,47 @@ Each project has characteristics, such as total capacity (MW), number of turbine
 An intuitive relationship is the number of turbines and the capacity of a project. 
 
 ```{r project data plot1}
-project_data <- raw_data %>% group_by(p_name, p_year, p_tnum, p_cap, t_state) %>% 
-  summarise(avg_cap = mean(t_cap, na.rm = T), avg_height = mean(t_hh, na.rm = T), 
+project_data <- raw_data %>% 
+  group_by(p_name, p_year, p_tnum, p_cap, t_state) %>% 
+  summarise(avg_cap = mean(t_cap, na.rm = T), 
+            avg_height = mean(t_hh, na.rm = T), 
             avg_diameter = mean(t_rd, na.rm = T)) %>%
   ungroup()
 
-project_data %>% ggplot(aes(p_tnum, p_cap, colour = t_state)) + geom_point() + 
+project_data %>% 
+  ggplot(aes(p_tnum, p_cap, colour = t_state)) + 
+  geom_point() + 
   guides(colour = FALSE) +  # too many states to display in a legend
   scale_y_continuous(labels = number_format(suffix=" MW")) +
-  labs(x = "number of turbines", y = "project capacity", title = "Capacity vs No. Turbines")  + theme_light()
+  labs(x = "number of turbines", y = "project capacity", title = "Capacity vs No. Turbines")
 ```
 <br>  
 
 The number of turbines can be used to determine the size of the points in a graph. This is a good way to include extra information in a graph. The project capacity, year, number of turbines and state are all included in the graph below, albeit the legend of which state is which colour is not displayed.
 ```{r project data plot2}
-project_data %>% ggplot(aes(p_year, p_cap, colour = t_state, size= p_tnum)) + geom_point() + 
+project_data %>% 
+  ggplot(aes(p_year, p_cap, colour = t_state, size= p_tnum)) + 
+  geom_point() + 
   guides(colour = FALSE, size = guide_legend("# turbines", reverse=T)) +
   scale_y_continuous(labels = number_format(suffix=" MW")) +
-  labs(x = "year", y = "project capacity", title = "Capacity across time") + theme_light()
+  labs(x = "year", y = "project capacity", title = "Capacity across time")
 ```
 
 ```{r project data plot3}
-year_data <- raw_data %>% group_by(p_year) %>% 
-  summarise(avg_cap = mean(t_cap, na.rm = T), avg_height = mean(t_hh, na.rm = T), 
-            avg_diameter = mean(t_rd, na.rm = T), avg_tnum = mean(p_tnum, na.rm = T)) %>%
+year_data <- raw_data %>% 
+  group_by(p_year) %>% 
+  summarise(avg_cap = mean(t_cap, na.rm = T), 
+            avg_height = mean(t_hh, na.rm = T), 
+            avg_diameter = mean(t_rd, na.rm = T), 
+            avg_tnum = mean(p_tnum, na.rm = T)) %>%
   ungroup()
 
-year_data %>% ggplot(aes(p_year, avg_cap, size= avg_tnum)) + geom_point() + 
-  guides(size = guide_legend("Avg # turbines", reverse=T)) +
-  scale_y_continuous(labels = number_format(suffix=" MW")) +
-  labs(x = "year", y = "average project capacity", title = "Capacity across time") +
-  theme_light()
+year_data %>% 
+  ggplot(aes(p_year, avg_cap, size = avg_tnum)) + 
+  geom_point() + 
+  guides(size = guide_legend("Avg # turbines", reverse = T)) +
+  scale_y_continuous(labels = number_format(suffix = " MW")) +
+  labs(x = "year", y = "average project capacity", title = "Capacity across time")
 ```
 
 <br>  
@@ -112,21 +129,24 @@ project_lm2$coefficients
 project_lm3 <- lm(p_cap ~ p_tnum + avg_diameter + as.factor(p_year), data = project_data)
 
 # predictions
-avg_diameter <- project_data %>% filter(p_year == 2018) %>% select(avg_diameter) %>% colMeans(na.rm = T)
+avg_diameter <- project_data %>% 
+  filter(p_year == 2018) %>% 
+  select(avg_diameter) %>% 
+  colMeans(na.rm = T)
 
-new_data_predicted <- data_frame(model = "Year as continuous", 
-                                 p_tnum = 1:140, avg_diameter, p_year = 2018) %>% 
+new_data_predicted <- data_frame(model = "Year as continuous", p_tnum = 1:140, avg_diameter, p_year = 2018) %>% 
   mutate(predicted_cap = predict(project_lm2, newdata = .)) %>% 
   bind_rows(
     data_frame(model = "Year as factor", p_tnum = 1:140, avg_diameter, p_year = 2018) %>%
-      mutate(predicted_cap = predict(project_lm3, newdata = .)))
+      mutate(predicted_cap = predict(project_lm3, newdata = .))
+    )
 
 ggplot() +
   geom_point(aes(x = p_tnum, y = p_cap), data = project_data %>% filter(p_year > 2017, !is.na(p_cap))) +
   geom_line(aes(x = p_tnum, y = predicted_cap, colour = model), data = new_data_predicted) +
   labs(x = "number of turbines", y = "total capacity", 
        title = "Linear model of capacity", subtitle = "2018 prediction") + 
-  scale_y_continuous(label = number_format(suffix = " MW")) + theme_light()
+  scale_y_continuous(label = number_format(suffix = " MW"))
 ```
 
 <br>  
@@ -142,14 +162,16 @@ new_data_lm2_2 <- data_frame(model = "Year as continuous", p_tnum = 1:140, avg_d
   mutate(predicted_cap = predict(project_lm2_2, newdata = .))
 
 new_data_combined2 <- new_data_lm2_2 %>% 
-  bind_rows(data_frame(model = "Year as factor", p_tnum = 1:140, avg_diameter, p_year = 2018) %>% 
-              mutate(predicted_cap = predict(project_lm3_2, newdata = .)))
+  bind_rows(
+    data_frame(model = "Year as factor", p_tnum = 1:140, avg_diameter, p_year = 2018) %>% 
+      mutate(predicted_cap = predict(project_lm3_2, newdata = .))
+            )
 
 ggplot() +
   geom_point(aes(x = p_tnum, y = p_cap), data = project_data %>% filter(p_year > 2017, !is.na(p_cap))) +
   geom_line(aes(x = p_tnum, y = predicted_cap, colour = model), data = new_data_combined2) +
   labs(x = "number of turbines", y = "total capacity", title = "Linear model of capacity", subtitle = "2018 prediction", colour = "model (>2010)") + 
-  scale_y_continuous(label = number_format(suffix = " MW")) + theme_light()
+  scale_y_continuous(label = number_format(suffix = " MW"))
 ```
 
 
@@ -167,7 +189,7 @@ data_frame(Model = c("Year (cont)", "Year (fact)", "Modern Year (cont)", "Modern
              sqrt(mean(project_lm3_2$residuals^2))
            )
 ) %>% xtable(digits = 4) %>% 
-  print(type="html", include.rownames=FALSE, html.table.attributes=list('align="center", border=1, width=40%'))
+  print(type = "html", include.rownames = FALSE, html.table.attributes = list('align="center", border=1, width=40%'))
 ```
 
 ```{r, echo=F, eval=F}
@@ -188,31 +210,31 @@ The data also contains information on different turbines, manufacturer, model, e
 turbine_data <- raw_data %>% 
   group_by(t_manu, t_model, t_cap, t_hh, t_rd) %>% 
   summarise(year = min(p_year, na.rm = T)) %>%
-  filter(!is.infinite(year)) %>% ungroup()
+  filter(!is.infinite(year)) %>% 
+  ungroup()
 
 turbine_data %>% ggplot(aes(t_cap, t_hh, colour = as.factor(year))) +
   geom_point() +
   scale_x_continuous(labels = number_format(suffix=" kW", big.mark = "")) +
   scale_y_continuous(labels = number_format(suffix=" m")) +
-  labs(x = "turbine capacity", y = "turbine hub height", title = "Capacity vs Height", colour="Year") + 
-  theme_light()
+  labs(x = "turbine capacity", y = "turbine hub height", title = "Capacity vs Height", colour = "Year")
 
 turbine_data %>% ggplot(aes(t_cap, t_rd, colour = year)) +
   geom_point() +
-  scale_x_continuous(labels = number_format(suffix=" kW", big.mark = "")) +
-  scale_y_continuous(labels = number_format(suffix=" m")) +
-  labs(x = "turbine capacity", y = "turbine rotor diameter", title = "Capacity vs Rotor Diameter", colour="Year") + 
-  theme_light()
+  scale_x_continuous(labels = number_format(suffix = " kW", big.mark = "")) +
+  scale_y_continuous(labels = number_format(suffix = " m")) +
+  labs(x = "turbine capacity", y = "turbine rotor diameter", title = "Capacity vs Rotor Diameter", colour = "Year")
 ```
 
 #### Average height and diameter over time
 ```{r}
-year_data %>% gather(variable, measure, -p_year) %>% 
-  filter(variable %in% c("avg_height", "avg_diameter")) %>% ggplot() +
-  geom_line(aes(p_year, measure, colour = variable)) +
-  labs(x = "year", y = "measure", title = "Average Height and diameter of turbines over time", colour = NULL) +
-  scale_y_continuous(labels = number_format(suffix = "m")) +
-  theme_light()
+year_data %>% 
+  gather(variable, measure, -p_year) %>% 
+  filter(variable %in% c("avg_height", "avg_diameter")) %>% 
+  ggplot(aes(p_year, measure, colour = variable)) + 
+  geom_line() + 
+  scale_y_continuous(labels = number_format(suffix = "m")) + 
+  labs(x = "year", y = "measure", title = "Average Height and diameter of turbines over time", colour = NULL)
 ```
 
 
@@ -239,7 +261,7 @@ plotly_1 <- project_data %>%
   scale_y_continuous(labels = number_format(suffix=" m")) +
   labs(x = "average turbine capacity", y = "average turbine height", 
        title = "Project's Turbine Capacity vs Height",
-       colour = "State", size = NULL) + theme_light()
+       colour = "State", size = NULL)
 ```
 Double click on any state in the legend to display only the data from that state.
 ```{r project data plotly output}
@@ -258,14 +280,14 @@ turbine_3d <- plot_ly(turbine_data %>% filter(year > 2010),  # too many observat
                                     "</br> diameter:", t_rd,
                                     "</br> year:", year)) %>% 
   layout(title = "Turbine heights and diameters versus capacity",
-         scene=list(camera = list(eye = list(x=1.8,y=0.3,z=0.28),
+         scene=list(camera = list(eye = list(x = 1.8,y = 0.3,z = 0.28),
                                   center = list(x = 0, y = 0, z= -0.2)),  # set the default camera view
                     xaxis = list(title = "height", ticksuffix=" m"),  # add axis title and suffix to tick labels
                     yaxis = list(title = "diameter", ticksuffix=" m"), 
                     zaxis = list(title = "capacity", ticksuffix=" kW")), showlegend = FALSE)
 ```
 
-Click and drag on the plot below to move the axes.  
+**Click and drag on the plot below to move the axes.**  
 <br>
 ```{r plotly 3d output, echo = FALSE}
 shiny::div(turbine_3d)
@@ -282,7 +304,10 @@ shiny::div(turbine_3d)
 Geographical data for each turbine is provided. This can be used to explore the location of wind farms.
 
 ```{r state data, results='asis'}
-raw_data %>% count(State = t_state) %>% arrange(desc(n)) %>% head(10) %>%
+raw_data %>% 
+  count(State = t_state) %>% 
+  arrange(desc(n)) %>% 
+  head(10) %>%
   xtable() %>% 
   print(type="html", include.rownames=FALSE, html.table.attributes=list('align="center", border=0'))
 ```
@@ -296,13 +321,17 @@ library(maps)
 states = map_data("state")  # data for plotting US map
 
 ggplot() + 
-      geom_polygon(data = states, aes(x=long, y = lat, group=group), fill = NA, color = "black") + 
-      geom_point(data = raw_data, aes(x = xlong, y = ylat), color = "blue3", size = 0.7) +
+      geom_polygon(data = states, 
+                   aes(x=long, y = lat, group=group), fill = NA, color = "black") + 
+      geom_point(data = raw_data, 
+                 aes(x = xlong, y = ylat), color = "blue3", size = 0.7) +
       coord_fixed(1.3) + xlim(range(states$long)) + ylim(range(states$lat)) + theme_void()
 
 ggplot() + 
-      geom_polygon(data = states, aes(x=long, y = lat, group=group), fill = NA, color = "black") + 
-      stat_density2d(data = raw_data, aes(x = xlong, y = ylat, fill=..level..), geom="polygon") +  # add density to map
+      geom_polygon(data = states, 
+                   aes(x=long, y = lat, group=group), fill = NA, color = "black") + 
+      stat_density2d(data = raw_data, 
+                     aes(x = xlong, y = ylat, fill=..level..), geom = "polygon") +  # add density to map
       coord_fixed(1.3) + xlim(range(states$long)) + ylim(range(states$lat)) + theme_void()
 ```
 
@@ -318,15 +347,27 @@ library(gganimate)
 animation_data <- raw_data %>% filter(!is.na(p_year))
 
 location_animation <- ggplot() + 
-      geom_polygon(data = states, aes(x=long, y = lat, group=group), fill = NA, color = "black") +  # add outline of US and states
-      geom_point(data = animation_data, aes(x = xlong, y = ylat), color = "blue3", size = 0.7) +  # turbine location plot
-  coord_fixed(1.3) + xlim(range(states$long)) + ylim(range(states$lat)) + theme_void() +  # aesthitics
+      geom_polygon(data = states, 
+                   aes(x=long, y = lat, group=group), 
+                   fill = NA, color = "black") +  # add outline of US and states
+      geom_point(data = animation_data, 
+                 aes(x = xlong, y = ylat), 
+                 color = "blue3", size = 0.7) +  # turbine location plot
+  coord_fixed(1.3) + 
+  xlim(range(states$long)) + 
+  ylim(range(states$lat)) + 
+  theme_void() + 
   labs(title = "Location of wind turbines in the USA",
        subtitle = 'Year: {frame_time}') +
-  transition_time(p_year) + shadow_mark(colour ='blue')  # animations settings, shdow_mark sticks points onto the map
+  # animations settings, shdow_mark sticks points onto the map
+  transition_time(p_year) + 
+  shadow_mark(colour ='blue')  
 
-animate(location_animation, nframes = length(unique(raw_data$p_year)), fps = 1, width=800, height=800)  # create animation
-
+ # create animation
+animate(location_animation, 
+        nframes = length(unique(raw_data$p_year)), 
+        fps = 1, 
+        width=800, height=800)
 ```
 
 #### Other animation

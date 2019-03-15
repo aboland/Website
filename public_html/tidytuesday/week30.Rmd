@@ -1,15 +1,16 @@
 ---
-title: "Week 30"
+title: "Week 30 - 2018"
 ---
 
 ***
 
-### Data
+## Movie Data
+<br>
 
-[Week 30](https://github.com/rfordatascience/tidytuesday/tree/master/data/2018-10-23) of tidy Tuesday is data from
-<a href="https://www.the-numbers.com/" target="_blank">the-numbers.com</a>.
-It documents movies and their profit/cost.
+[Week 30](https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-10-23) of tidy Tuesday is data from
+<a href="https://www.the-numbers.com/" target="_blank">the-numbers.com</a>, it documents movies and their profit/cost.
 
+<br>
 
 ### Plotly
 
@@ -27,7 +28,7 @@ library(scales)
 library(plotly)
 
  # Read data
-horror_movie <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018-10-23/movie_profit.csv")
+horror_movie <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018/2018-10-23/movie_profit.csv")
 
  # Tidy dates and calculate return
 horror_movie <- horror_movie %>% select(-X1) %>%
@@ -49,7 +50,8 @@ horror_movie %>%
 
 ```{r main plotly, fig.align='center', echo=FALSE}
   # ggplot of median production cost versus year by genre
-yearly_cost_plot <- movie_agg %>% ggplot(aes(release_year, median_production, colour=genre)) +
+yearly_cost_plot <- movie_agg %>% 
+  ggplot(aes(release_year, median_production, colour=genre)) +
   geom_line() +
   scale_y_continuous(labels = dollar_format(scale=0.000001, suffix="M")) +  # Change y-axis labels to dollars
   ylab(NULL) + xlab("Year") + 
@@ -78,12 +80,11 @@ shiny::div(yearly_cost_plotly,
 
 ```{r graph data, fig.align='center'}
   # ggplot of median production cost versus year by genre
-yearly_cost_plot <- movie_agg %>% ggplot(aes(release_year, median_production, colour=genre)) +
+yearly_cost_plot <- movie_agg %>% 
+  ggplot(aes(release_year, median_production, colour=genre)) +
   geom_line() +
   scale_y_continuous(labels = dollar_format(scale=0.000001, suffix="M")) +  # Change y-axis labels to dollars
-  ylab(NULL) + xlab("Year") + 
-  labs(colour=NULL) +  # remove legend title
-  ggtitle("Median Production Cost")
+  labs(title = "Median Production Cost", x = "Year", y = NULL, colour = NULL)  # remove legend title
 
 yearly_cost_plot
 ```

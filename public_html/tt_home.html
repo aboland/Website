@@ -93,7 +93,12 @@ body {
             <p><img src="images/profile_2018.jpg" width="100px" height="20px" /></p>
         </center>
         <br>
+        <h4>Senior Data Scientist</h4>
         <p align="justify">I am currently working as a Senior Data Scientist with <a href="https://www.ascentialedge.com/">Edge by Ascential</a> (formerly Clavis Insight), a leading firm in eCommerce insights and analytics.<br /> My work focuses on researching and implementing statistical and machine learning techniques in order to improve and automate processes within the company.</p>
+        <br>
+        <h4>Lecturer</h4>
+        <p align="justify">I'm also a part time lecturer in the <a href="http://www.ucd.ie/quinn/">UCD Lochlann Quinn School of Business</a>, where I currently deliver lectures for the Data Analysis for Decision Makers module.
+        </p>
         <br>
         <center>
             <a class="twitter-timeline" href="https://twitter.com/AidoBo" data-widget-id="705121660492488705">Tweets by @AidoBo</a>
@@ -253,10 +258,12 @@ $(document).ready(function () {
         <li class="dropdown">
           <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Shiny Apps <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
+            <li><a href="http://rtpi.aboland.ie" target="_blank">Dublin Public Transport</a></li>
+            <li class="divider"></li>
             <li><a href="http://ff.aboland.ie" target="_blank">Premier League Stats</a></li>
             <li><a href="http://gaa.aboland.ie" target="_blank">GAA Stats</a></li>
             <li class="divider"></li>
-            <li><a href="http://bayes2.ucd.ie:3838/aboland/STAT10050/" target="_blank">Teaching App</a></li>
+            <li><a href="http://correlation.aboland.ie" target="_blank">Teaching App</a></li>
           </ul>
             
         </li>
@@ -265,6 +272,7 @@ $(document).ready(function () {
           <ul class="dropdown-menu" role="menu">
             <li><a href="tt_home.html">About</a></li>
             <li class="divider"></li>
+            <li class="dropdown-header">2018</li>
             <li><a href="tidytuesday/week32.html">Week 32 -  US Turbine Data</a></li>
             <li><a href="tidytuesday/week30.html">Week 30 -  Movie Data</a></li>
             <li><a href="tidytuesday/week28.html">Week 28 - US Voter Data</a></li>
@@ -300,18 +308,21 @@ $(document).ready(function () {
 <hr />
 <p><a href="https://github.com/rfordatascience/tidytuesday" target="_blank">Tidy Tuesday</a> is a weekly data project aimed at the R users. It is organised by the <a href="https://twitter.com/R4DScommunity" target="_blank">R4DS</a> community.<br />
 It is a great way of practicing with differnt types of data and using different techniques. Wrangling, tidying, plotting and modelling different types of data.</p>
-<p>One my latest attempt was in <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018-10-09" target="_blank">week 28 (09/10/2018)</a>, which was voter turnout data from 1980 to 2014 for the USA. It included the number of age-eligible voters versus total ballots/votes counted by state and year. I decided to try and use the <a href="https://github.com/thomasp85/gganimate" target="_blank">gganimate</a> library to create an animated plot.</p>
 <p><br></p>
-<div id="previous-weeks" class="section level3">
-<h3>Previous Weeks</h3>
+<div id="my-attempts" class="section level3">
+<h3>My Attempts</h3>
+<div id="section" class="section level4">
+<h4>2018</h4>
 <p><a href="tidytuesday/week32.html">Week 32 - US Turbine Data</a><br />
 <a href="tidytuesday/week30.html">Week 30 - Movie Data</a><br />
 <a href="tidytuesday/week28.html">Week 28 - US Voter Data</a><br />
 <a href="tidytuesday/week5.html">Week 5 - US Census Data</a></p>
 <p><br></p>
 </div>
+</div>
 <div id="week-28" class="section level3">
 <h3>Week 28</h3>
+<p>One of my attempts was in <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-10-09" target="_blank">week 28 in 2018 (09/10/2018)</a>, which was voter turnout data from 1980 to 2014 for the USA. It included the number of age-eligible voters versus total ballots/votes counted by state and year. I decided to try and use the <a href="https://github.com/thomasp85/gganimate" target="_blank">gganimate</a> library to create an animated plot.</p>
 <p>The animation shows the number of elgible voters versus the number of votes over time.</p>
 <p><img src="tt_home_files/figure-html/week28_code-1.gif" style="display: block; margin: auto;" /></p>
 </div>
@@ -322,7 +333,7 @@ library(gganimate)
 library(scales)
 
  # Load data
-voter_data &lt;- read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018-10-09/voter_turnout.csv&quot;)
+voter_data &lt;- read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018/2018-10-09/voter_turnout.csv&quot;)
 
  # Remove unwanted entries
 state_data &lt;- voter_data %&gt;% 
