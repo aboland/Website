@@ -11,7 +11,7 @@
 
 
 
-<title>Week5</title>
+<title>Week 5 - 2018</title>
 
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -57,6 +57,54 @@ body {
 </style>
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
+
+<style type = "text/css">
+    .leftbar {
+        /*position:absolute;*/
+        max-width: 20%;
+        float: left;
+        background-color: #e6e6e6;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-left: 15px;
+    }
+    @media only screen and (max-width: 600px) {
+      div.leftbar {
+        max-width: 100%;
+        float: bottom;
+      }
+      
+    }
+
+    /*
+    .main-container {
+      position:absolute;
+      max-width: 940px;
+      margin-left: 21%;
+      margin-right: auto;
+    }
+    */
+
+</style>
+    
+    <div class="leftbar">
+        <br>
+        <center>
+            <p><img src="images/profile_2018.jpg" width="100px" height="20px" /></p>
+        </center>
+        <br>
+        <h4>Senior Data Scientist</h4>
+        <p align="justify">I am currently working as a Senior Data Scientist with <a href="https://www.ascentialedge.com/">Edge by Ascential</a> (formerly Clavis Insight), a leading firm in eCommerce insights and analytics.<br /> My work focuses on researching and implementing statistical and machine learning techniques in order to improve and automate processes within the company.</p>
+        <br>
+        <h4>Lecturer</h4>
+        <p align="justify">I'm also a part time lecturer in the <a href="http://www.ucd.ie/quinn/">UCD Lochlann Quinn School of Business</a>, where I currently deliver lectures for the Data Analysis for Decision Makers module.
+        </p>
+        <br>
+        <center>
+            <a class="twitter-timeline" href="https://twitter.com/AidoBo" data-widget-id="705121660492488705">Tweets by @AidoBo</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </center>
+    </div>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -170,8 +218,18 @@ $(document).ready(function () {
         <li class="dropdown">
           <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documents <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-                <li><a href="../docs/cv-WEB-industry.pdf" target="_blank">CV (industry)</a></li>
-                <li><a href="../docs/cv-WEB-academic.pdf" target="_blank">CV (academic)</a></li>
+             <!--
+              <li class="dropdown-header">Documents</li>
+              -->
+             <!--<li><a href="/LDA">LDA</a></li>
+             <li><a href="/LDA/LDA.pdf">LDA [PDF]</a></li>
+             -->
+             <!--
+              <li><a href="blank.html">Blank</a></li>
+             <li class="divider"></li>
+             -->
+                <li><a href="/docs/cv-WEB-industry.pdf" target="_blank">CV (industry)</a></li>
+                <li><a href="/docs/cv-WEB-academic.pdf" target="_blank">CV (academic)</a></li>
             <li class="divider"></li>
             <li class="dropdown-header">Presentations</li>
                 <li><a href="/docs/EARL2017.pdf" target="_blank">EARL Boston 2017</a></li>
@@ -183,28 +241,42 @@ $(document).ready(function () {
                 <li><a href="/docs/NIPS2015.pdf" target="_blank">Workshop at NIPS 2015</a></li>
                 <li><a href="/docs/Insight2014.pdf" target="_blank">Insight Conference 2014</a></li>
                 <li><a href="/docs/CASI2013.pdf" target="_blank">CASI 2013</a></li>
+            <!--<li class="divider"></li>-->
+             <!--<li class="dropdown-header">Shiny Apps</li>-->
+                <!--<li><a href="http://ff.aboland.ie" target="_blank">Premier League Stats</a></li>-->
+                <!--<li><a href="http://bayes2.ucd.ie:3838/aboland/STAT10050/" target="_blank">Teaching App</a></li>-->
+                <!--<li><a href="http://gaa.aboland.ie" target="_blank">GAA Stats</a></li>-->
+            
+            <!--    
+            <li class="divider"></li>
+              <li class="dropdown-header">GitHub</li>
+                <li><a href="https://github.com/aboland" target="_blank">GitHub Profile</a></li>
+            -->
           </ul>
           
         </li>
         <li class="dropdown">
           <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Shiny Apps <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
+            <li><a href="http://rtpi.aboland.ie" target="_blank">Dublin Public Transport</a></li>
+            <li class="divider"></li>
             <li><a href="http://ff.aboland.ie" target="_blank">Premier League Stats</a></li>
             <li><a href="http://gaa.aboland.ie" target="_blank">GAA Stats</a></li>
             <li class="divider"></li>
-            <li><a href="http://bayes2.ucd.ie:3838/aboland/STAT10050/" target="_blank">Teaching App</a></li>
+            <li><a href="http://correlation.aboland.ie" target="_blank">Teaching App</a></li>
           </ul>
             
         </li>
         <li class="dropdown">
-          <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tidy Tuesday <span class="caret"></span></a>
+            <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tidy Tuesday <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="../tt_home.html">About</a></li>
+            <li><a href="tt_home.html">About</a></li>
             <li class="divider"></li>
-            <li><a href="week30.html">Week 32 -  US Turbine Data</a></li>
-            <li><a href="week30.html">Week 30 -  Movie Data</a></li>
-            <li><a href="week28.html">Week 28 -  US Voter Data</a></li>
-            <li><a href="week5.html">Week 5 - US Census Data</a></li>
+            <li class="dropdown-header">2018</li>
+            <li><a href="tidytuesday/week32.html">Week 32 -  US Turbine Data</a></li>
+            <li><a href="tidytuesday/week30.html">Week 30 -  Movie Data</a></li>
+            <li><a href="tidytuesday/week28.html">Week 28 - US Voter Data</a></li>
+            <li><a href="tidytuesday/week5.html">Week 5 - US Census Data</a></li>
           </ul>
         </li>
         
@@ -228,7 +300,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Week5</h1>
+<h1 class="title toc-ignore">Week 5 - 2018</h1>
 
 </div>
 
@@ -236,7 +308,7 @@ $(document).ready(function () {
 <hr />
 <div id="data" class="section level3">
 <h3>Data</h3>
-<p>The data for tidy tuesday week 5 is <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018-04-30">US census data</a>. The data contains information at a county level for a number of different variables/factors, such as population, income, and employment. More information on the dat acan be found <a href="https://www.kaggle.com/muonneutrino/us-census-demographic-data">here</a>.</p>
+<p>The data for tidy tuesday week 5 is <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-04-30">US census data</a>. The data contains information at a county level for a number of different variables/factors, such as population, income, and employment. More information on the dat acan be found <a href="https://www.kaggle.com/muonneutrino/us-census-demographic-data">here</a>.</p>
 </div>
 <div id="map-plot" class="section level3">
 <h3>Map plot</h3>
@@ -246,22 +318,23 @@ $(document).ready(function () {
 </div>
 <div id="code" class="section level2">
 <h2>Code</h2>
-<pre class="r"><code>library(dplyr)
+<pre class="r"><code>library(readr)
+library(dplyr)
 library(ggplot2)
 library(maps)
 library(scales)
 
-tidy_tuesday5 &lt;- readr::read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018-04-30/week5_acs2015_county_data.csv&quot;)
+tidy_tuesday5 &lt;- read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018/2018-04-30/week5_acs2015_county_data.csv&quot;)
 
  # County map data
 counties &lt;- map_data(&quot;county&quot;)
 
  # Combined county data
 all_county &lt;- tidy_tuesday5 %&gt;% 
-  mutate(County=tolower(County), State=tolower(State)) %&gt;%
-  inner_join(counties, by=c(&quot;County&quot; = &quot;subregion&quot;, &quot;State&quot; = &quot;region&quot;))
+  mutate(County = tolower(County), State = tolower(State)) %&gt;%
+  inner_join(counties, by = c(&quot;County&quot; = &quot;subregion&quot;, &quot;State&quot; = &quot;region&quot;))
 
-county_plot &lt;- function(x, legend_format=number){
+county_plot &lt;- function(x, legend_format = number){
   ggplot(data = all_county, mapping = aes(x = long, y = lat, group = group)) + 
     coord_fixed(1.3) + 
     geom_polygon(aes_string(fill = x), color = &quot;grey&quot;, size = 0.05) +
@@ -270,7 +343,7 @@ county_plot &lt;- function(x, legend_format=number){
     theme(plot.margin = unit(c(0,0,0,0), &quot;cm&quot;))
 }
 
-county_plot(&quot;Income&quot;, dollar)
+county_plot(&quot;Income&quot;, dollar)  # the second argument can be used to format the legend (see `scales` package)
 county_plot(&quot;MeanCommute&quot;, number_format(suffix = &quot; mins&quot;))</code></pre>
 <p><br><br />
 <br></p>

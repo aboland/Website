@@ -1,12 +1,12 @@
 ---
-title: "Week 28"
+title: "Week 28 - 2018"
 ---
 
 ***
 
-### Data
+## Voter Data
 
-<a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018-10-09" target="_blank">Week 28</a>
+<a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-10-09" target="_blank">Week 28</a>
 of tidy Tuesday is a dataset containing the number of age-eligible voters versus total ballots/votes counted by state and year.
 
 ### Animation
@@ -21,7 +21,7 @@ library(gganimate)
 library(scales)
 
  # Load data
-voter_data <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018-10-09/voter_turnout.csv")
+voter_data <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018/2018-10-09/voter_turnout.csv")
 
  # Remove unwanted entries
 state_data <- voter_data %>% 
