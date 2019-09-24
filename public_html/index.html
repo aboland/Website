@@ -94,15 +94,18 @@ body {
         </center>
         <br>
         <h4>Senior Data Scientist</h4>
-        <p align="justify">I am currently working as a Senior Data Scientist with <a href="https://www.ascentialedge.com/">Edge by Ascential</a> (formerly Clavis Insight), a leading firm in eCommerce insights and analytics.<br /> My work focuses on researching and implementing statistical and machine learning techniques in order to improve and automate processes within the company.</p>
+        <p align="justify">I am currently working as a Senior Data Scientist with <a href="https://www.ascentialedge.com/">Edge by Ascential</a>, a leading firm in eCommerce insights and analytics.<br /> My work focuses on researching and implementing statistical and machine learning techniques in order to improve and automate processes within the company.</p>
         <br>
         <h4>Lecturer</h4>
-        <p align="justify">I'm also a part time lecturer in the <a href="http://www.ucd.ie/quinn/">UCD Lochlann Quinn School of Business</a>, where I currently deliver lectures for the Data Analysis for Decision Makers module.
+        <p align="justify">I'm also a part time lecturer in the <a href="https://www.ucd.ie/mathstat/">UCD School of Mathematics and Statistics</a>, where I currently lecture the Introduction to Data Analytics module.
         </p>
         <br>
         <center>
-            <a class="twitter-timeline" href="https://twitter.com/AidoBo" data-widget-id="705121660492488705">Tweets by @AidoBo</a>
+            <a class="twitter-timeline" href="https://twitter.com/BolandAi" data-widget-id="705121660492488705">Tweets by @BolandAi</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            <!--
+            <a class="twitter-timeline" href="https://twitter.com/BolandAi?ref_src=twsrc%5Etfw">Tweets by BolandAi</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            -->
         </center>
     </div>
 
@@ -153,9 +156,7 @@ h6 {
 
 <link rel="stylesheet" href="mystyle.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -180,22 +181,92 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
 });
 </script>
 
 <!-- code folding -->
 
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -322,7 +393,8 @@ I am currently working as a Data Scientist with [Clavis-Insight](http://clavisin
 </div>
 <div id="teaching" class="section level3">
 <h3>Teaching</h3>
-<p>In 2019 I will deliver lectures for the <a href="https://sisweb.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=QMOD&amp;MAJR=BSW1&amp;MODULE=MIS10090">Data Analysis for Decision Makers</a> module in the <a href="http://www.ucd.ie/quinn/">UCD Lochlann Quinn School of Buisness</a>.</p>
+<p>I am currently lecturing <a href="https://sisweb.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=MODULE&amp;MODULE=STAT40720&amp;MAJR=F084">Introduction to Data Analytics</a> which forms part of the <a href="https://sisweb.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=PROG&amp;MAJR=F084">MSc in Data Analytics</a> in the <a href="https://www.ucd.ie/mathstat/">UCD School of Mathematics and Statistics</a>.</p>
+<p>In the first half of 2019 I delivered lectures for the <a href="https://sisweb.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=QMOD&amp;MAJR=BSW1&amp;MODULE=MIS10090">Data Analysis for Decision Makers</a> module in the <a href="http://www.ucd.ie/quinn/">UCD Lochlann Quinn School of Buisness</a>.</p>
 <p>I previously lectured an introductory statistical module <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=10050">(Practical Statistics)</a> in <a href="http://www.ucd.ie/">UCD</a>. Topics covered included calculating summary statistics, graphs, basic probability theory, confidence intervals, <a href="http://bayes2.ucd.ie:3838/aboland/STAT10050/">regression and correlation.</a> The students were also thought the basics of <a href="https://www.minitab.com/en-us/">Minitab</a> and <a href="https://www.r-project.org/">R</a>.</p>
 <p>I was a tutor in <a href="http://www.ucd.ie/">UCD</a> from 2010 until 2015. Modules I covered included <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=40390">Bayesian Statistics</a>, <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=30240">Linear Models</a>, <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=20110">Probability Theory</a>, <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=30010">Time Series</a>, <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=40180">Data Programming</a> and <a href="https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&amp;p_crse=40160#bookmarkschedule">Actuarial Statistics</a>.</p>
 <hr />

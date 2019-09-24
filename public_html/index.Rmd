@@ -24,7 +24,9 @@ I completed a year as a Postdoctoral researcher in the [Insight Center for Data 
 
 ### Teaching
 
-In 2019 I will deliver lectures for the [Data Analysis for Decision Makers](https://sisweb.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=QMOD&MAJR=BSW1&MODULE=MIS10090) module in the [UCD Lochlann Quinn School of Buisness](http://www.ucd.ie/quinn/).  
+I am currently lecturing [Introduction to Data Analytics](https://sisweb.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=MODULE&MODULE=STAT40720&MAJR=F084) which forms part of the [MSc in Data Analytics](https://sisweb.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=PROG&MAJR=F084) in the [UCD School of Mathematics and Statistics](https://www.ucd.ie/mathstat/).
+
+In the first half of 2019 I delivered lectures for the [Data Analysis for Decision Makers](https://sisweb.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=QMOD&MAJR=BSW1&MODULE=MIS10090) module in the [UCD Lochlann Quinn School of Buisness](http://www.ucd.ie/quinn/).  
 
 I previously lectured an introductory statistical module [(Practical Statistics)](https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&p_crse=10050) in [UCD](http://www.ucd.ie/). Topics covered included calculating summary statistics, graphs,  basic probability theory, confidence intervals, [regression and correlation.](http://bayes2.ucd.ie:3838/aboland/STAT10050/) The students were also thought the basics of [Minitab](https://www.minitab.com/en-us/) and [R](https://www.r-project.org/).
 
