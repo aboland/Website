@@ -13,98 +13,17 @@
 
 <title>Tidy Tuesday</title>
 
-<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
-<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="libs/navigation-1.1/tabsets.js"></script>
-<link href="libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="libs/highlightjs-9.12.0/highlight.js"></script>
-
-<style type="text/css">
-
-/* padding for bootstrap navbar */
-body {
-  padding-top: 50px;
-  padding-bottom: 40px;
-}
-
-
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h2 {
-  padding-top: 55px;
-  margin-top: -55px;
-}
-.section h3 {
-  padding-top: 55px;
-  margin-top: -55px;
-}
-
-
-
-/* don't use link color in navbar */
-.dropdown-menu>li>a {
-  color: black;
-}
-
-/* some padding for disqus */
-#disqus_thread {
-  margin-top: 45px;
-}
-
-</style>
-
-<link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
-
-<style type = "text/css">
-    .leftbar {
-        /*position:absolute;*/
-        max-width: 20%;
-        float: left;
-        background-color: #e6e6e6;
-        padding-top: 10px;
-        padding-right: 10px;
-        padding-left: 15px;
-    }
-    @media only screen and (max-width: 600px) {
-      div.leftbar {
-        max-width: 100%;
-        float: bottom;
-      }
-      
-    }
-
-    /*
-    .main-container {
-      position:absolute;
-      max-width: 940px;
-      margin-left: 21%;
-      margin-right: auto;
-    }
-    */
-
-</style>
-    
-    <div class="leftbar">
-        <br>
-        <center>
-            <p><img src="images/profile_2018.jpg" width="100px" height="20px" /></p>
-        </center>
-        <br>
-        <h4>Senior Data Scientist</h4>
-        <p align="justify">I am currently working as a Senior Data Scientist with <a href="https://www.ascentialedge.com/">Edge by Ascential</a> (formerly Clavis Insight), a leading firm in eCommerce insights and analytics.<br /> My work focuses on researching and implementing statistical and machine learning techniques in order to improve and automate processes within the company.</p>
-        <br>
-        <h4>Lecturer</h4>
-        <p align="justify">I'm also a part time lecturer in the <a href="http://www.ucd.ie/quinn/">UCD Lochlann Quinn School of Business</a>, where I currently deliver lectures for the Data Analysis for Decision Makers module.
-        </p>
-        <br>
-        <center>
-            <a class="twitter-timeline" href="https://twitter.com/AidoBo" data-widget-id="705121660492488705">Tweets by @AidoBo</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        </center>
-    </div>
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -151,11 +70,8 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="mystyle.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -180,16 +96,165 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
 
-<div class="container-fluid main-container">
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
 });
 </script>
 
@@ -198,11 +263,17 @@ $(document).ready(function () {
 
 
 
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
-    
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -210,87 +281,119 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">aboland.ie</a>
+      <a class="navbar-brand" href="index.html">aboland.ie</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <!--<li><a href="/">Home</a></li>-->
         <li class="dropdown">
-          <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documents <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-             <!--
-              <li class="dropdown-header">Documents</li>
-              -->
-             <!--<li><a href="/LDA">LDA</a></li>
-             <li><a href="/LDA/LDA.pdf">LDA [PDF]</a></li>
-             -->
-             <!--
-              <li><a href="blank.html">Blank</a></li>
-             <li class="divider"></li>
-             -->
-                <li><a href="/docs/cv-WEB-industry.pdf" target="_blank">CV (industry)</a></li>
-                <li><a href="/docs/cv-WEB-academic.pdf" target="_blank">CV (academic)</a></li>
-            <li class="divider"></li>
-            <li class="dropdown-header">Presentations</li>
-                <li><a href="/docs/EARL2017.pdf" target="_blank">EARL Boston 2017</a></li>
-                <li><a href="/docs/CASI2015.pdf" target="_blank">CASI 2015</a></li>
-                <li><a href="/docs/RSC2014.pdf" target="_blank">RSC 2014</a></li>
-            <li class="divider"></li>
-            <li class="dropdown-header">Posters</li>
-                <li><a href="/docs/casi_2018.html" target="_blank">CASI 2018</a></li>
-                <li><a href="/docs/NIPS2015.pdf" target="_blank">Workshop at NIPS 2015</a></li>
-                <li><a href="/docs/Insight2014.pdf" target="_blank">Insight Conference 2014</a></li>
-                <li><a href="/docs/CASI2013.pdf" target="_blank">CASI 2013</a></li>
-            <!--<li class="divider"></li>-->
-             <!--<li class="dropdown-header">Shiny Apps</li>-->
-                <!--<li><a href="http://ff.aboland.ie" target="_blank">Premier League Stats</a></li>-->
-                <!--<li><a href="http://bayes2.ucd.ie:3838/aboland/STAT10050/" target="_blank">Teaching App</a></li>-->
-                <!--<li><a href="http://gaa.aboland.ie" target="_blank">GAA Stats</a></li>-->
-            
-            <!--    
-            <li class="divider"></li>
-              <li class="dropdown-header">GitHub</li>
-                <li><a href="https://github.com/aboland" target="_blank">GitHub Profile</a></li>
-            -->
-          </ul>
-          
-        </li>
-        <li class="dropdown">
-          <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Shiny Apps <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="http://rtpi.aboland.ie" target="_blank">Dublin Public Transport</a></li>
-            <li class="divider"></li>
-            <li><a href="http://ff.aboland.ie" target="_blank">Premier League Stats</a></li>
-            <li><a href="http://gaa.aboland.ie" target="_blank">GAA Stats</a></li>
-            <li class="divider"></li>
-            <li><a href="http://correlation.aboland.ie" target="_blank">Teaching App</a></li>
-          </ul>
-            
-        </li>
-        <li class="dropdown">
-            <a href="authoring" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tidy Tuesday <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="tt_home.html">About</a></li>
-            <li class="divider"></li>
-            <li class="dropdown-header">2018</li>
-            <li><a href="tidytuesday/week32.html">Week 32 -  US Turbine Data</a></li>
-            <li><a href="tidytuesday/week30.html">Week 30 -  Movie Data</a></li>
-            <li><a href="tidytuesday/week28.html">Week 28 - US Voter Data</a></li>
-            <li><a href="tidytuesday/week5.html">Week 5 - US Census Data</a></li>
-          </ul>
-        </li>
-        
-        <!--<li><a href="https://github.com/aboland" target="_blank">GitHub Profile</a></li>-->
-        <li><a href="http://github.aboland.ie/">
-          GitHub
-          <img src="images/GitHub-Mark-120px-plus.png" height="18" width="18" border="3" hspace="4">
-        </a></li>
-        <!--<li><a href="https://www.linkedin.com/in/aidan-boland-95882931/">
-          LinkedIn
-          <img src="images/linkedin.png" height="18" width="18" border="3" hspace="4">
-        </a></li>-->
-        
-        <!--<li><a href="blank.html">Test page</a></li>-->
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Documents
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="/docs/cv-WEB-industry.pdf">CV</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Presentations</li>
+    <li>
+      <a href="/docs/Young-ISA2019.html">Young-ISA 2019</a>
+    </li>
+    <li>
+      <a href="/docs/EARL2017.pdf">EARL Boston 2017</a>
+    </li>
+    <li>
+      <a href="/docs/CASI2015.pdf">CASI 2015</a>
+    </li>
+    <li>
+      <a href="/docs/RSC2014.pdf">RSC 2014</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Posters</li>
+    <li>
+      <a href="/docs/casi_2018.html">CASI 2018</a>
+    </li>
+    <li>
+      <a href="/docs/NIPS2015.pdf">Workshop at NIPS 2015</a>
+    </li>
+    <li>
+      <a href="/docs/Insight2014.pdf">Insight Conference 2014</a>
+    </li>
+    <li>
+      <a href="/docs/CASI2013.pdf">CASI 2013</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Shiny Apps
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="http://rtpi.aboland.ie">Dublin Public Transport</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="http://ff.aboland.ie">Premier League Stats</a>
+    </li>
+    <li>
+      <a href="http://gaa.aboland.ie">GAA Stats</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="http://correlation.aboland.ie">Teaching App</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Tidy Tuesday
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="tt_home.html">About</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">2018</li>
+    <li>
+      <a href="tt_2018_week32.html">Week 32 -  US Turbine Data</a>
+    </li>
+    <li>
+      <a href="tt_2018_week30.html">Week 30 -  Movie Data</a>
+    </li>
+    <li>
+      <a href="tt_2018_week28.html">Week 28 - US Voter Data</a>
+    </li>
+    <li>
+      <a href="tt_2018_week5.html">Week 5 - US Census Data</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://www.linkedin.com/in/aidanboland/">
+    <span class="fa fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://github.aboland.ie/">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/BolandAi">
+    <span class="fa fa-twitter fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -320,8 +423,8 @@ It is a great way of practicing with differnt types of data and using different 
 <p><br></p>
 </div>
 </div>
-<div id="week-28" class="section level3">
-<h3>Week 28</h3>
+<div id="week-28---us-voter-data" class="section level3">
+<h3>Week 28 - US Voter Data</h3>
 <p>One of my attempts was in <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-10-09" target="_blank">week 28 in 2018 (09/10/2018)</a>, which was voter turnout data from 1980 to 2014 for the USA. It included the number of age-eligible voters versus total ballots/votes counted by state and year. I decided to try and use the <a href="https://github.com/thomasp85/gganimate" target="_blank">gganimate</a> library to create an animated plot.</p>
 <p>The animation shows the number of elgible voters versus the number of votes over time.</p>
 <p><img src="tt_home_files/figure-html/week28_code-1.gif" style="display: block; margin: auto;" /></p>
@@ -337,7 +440,8 @@ voter_data &lt;- read_csv(&quot;https://raw.githubusercontent.com/rfordatascienc
 
  # Remove unwanted entries
 state_data &lt;- voter_data %&gt;% 
-  filter(!state %in% c(&quot;United States&quot;, &quot;United States (Excl. Louisiana)&quot;))
+  filter(!state %in% c(&quot;United States&quot;, &quot;United States (Excl. Louisiana)&quot;)) %&gt;% 
+  mutate(year = as.integer(year))
 
  # Create base plot for animation
 votes_vs_eligible &lt;- ggplot(state_data, aes(votes, eligible_voters, colour = state)) +
