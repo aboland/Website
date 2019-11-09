@@ -1,0 +1,66 @@
+name: "Aidan Boland"
+navbar:
+  title: "aboland.ie"
+  left:
+    - text: "Documents"
+      menu:
+        - text: "CV"
+          href: /docs/cv-WEB-industry.pdf
+        - text: "-------"
+        - text: "Presentations"
+        - text: "Young-ISA 2019"
+          href: /docs/Young-ISA2019.html
+        - text: "EARL Boston 2017"
+          href: /docs/EARL2017.pdf
+        - text: "CASI 2015"
+          href: /docs/CASI2015.pdf
+        - text: "RSC 2014"
+          href: /docs/RSC2014.pdf
+        - text: "-------"
+        - text: "Posters"
+        - text: "CASI 2018"
+          href: /docs/casi_2018.html
+        - text: "Workshop at NIPS 2015"
+          href: /docs/NIPS2015.pdf
+        - text: "Insight Conference 2014"
+          href: /docs/Insight2014.pdf
+        - text: "CASI 2013"
+          href: /docs/CASI2013.pdf
+    - text: "Shiny Apps"
+      menu:
+        - text: "Dublin Public Transport"
+          href: http://rtpi.aboland.ie
+        - text: "-------"
+        - text: "Premier League Stats"
+          href: http://ff.aboland.ie
+        - text: "GAA Stats"
+          href: http://gaa.aboland.ie
+        - text: "-------"
+        - text: "Teaching App"
+          href: http://correlation.aboland.ie
+    - text: "Tidy Tuesday"
+      menu:
+        - text: "About"
+          href: tt_home.html
+        - text: "-------"
+        - text: "2018"
+        - text: "Week 32 -  US Turbine Data"
+          href: tt_2018_week32.html
+        - text: "Week 30 -  Movie Data"
+          href: tt_2018_week30.html
+        - text: "Week 28 - US Voter Data"
+          href: tt_2018_week28.html
+        - text: "Week 5 - US Census Data"
+          href: tt_2018_week5.html
+  right:
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/aidanboland/
+    - icon: fa-github fa-lg
+      href: http://github.aboland.ie/
+    - icon: fa-twitter fa-lg
+      href: https://twitter.com/BolandAi
+output_dir: ../public_html
+output:
+  html_document:
+    theme: cosmo
+    highlight: default
