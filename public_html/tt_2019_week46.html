@@ -414,7 +414,7 @@ $(document).ready(function () {
 
 
 <hr />
-<p>A copy of the RMarkdown file can be dowloaded from <a href="/docs/tt_2019_week46.Rmd">here</a></p>
+<p>A copy of the RMarkdown file can be downloaded from <a href="/docs/tt_2019_week46.Rmd">here</a></p>
 <hr />
 <div id="rmarkdown-with-parameters" class="section level2">
 <h2>RMarkdown with Parameters</h2>
@@ -436,7 +436,7 @@ params:
     choices: [&quot;R&quot;, &quot;C&quot;, &quot;HTML&quot;, &quot;C++&quot;, &quot;SVG&quot;, &quot;JavaScript&quot;]
 ---</code></pre>
 <p><code>params$top_n</code> and <code>params$perc_comparison</code> can be used throughout the document as variables.</p>
-<p>The document can be knitted with the defalut values by clicking the <code>Knit</code> button or specific values using <code>rmarkdown::render(&quot;Week46_crand.Rmd, params = list(top_n = 20, perc_comparison = &quot;R&quot;))&quot;</code>.</p>
+<p>The document can be knitted with the default values by clicking the <code>Knit</code> button or specific values using <code>rmarkdown::render(&quot;Week46_crand.Rmd, params = list(top_n = 20, perc_comparison = &quot;R&quot;))&quot;</code>.</p>
 <p>A user interface can be used by selecting <code>Knit with Parameters</code> from the dropdown menu for <code>Knit</code>, or <code>rmarkdown::render(&quot;MyDocument.Rmd&quot;, params = &quot;ask&quot;)</code>.</p>
 <p>See <a href="https://bookdown.org/yihui/rmarkdown/params-knit.html">here</a> for more information on parameters.</p>
 <p><br><br></p>
@@ -447,8 +447,8 @@ library(dplyr)
 cran_code &lt;- 
   readr::read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-11-12/loc_cran_packages.csv&quot;)</code></pre>
 </div>
-<div id="top-20-laguages" class="section level2">
-<h2>Top 20 Laguages</h2>
+<div id="top-20-languages" class="section level2">
+<h2>Top 20 Languages</h2>
 <pre class="r"><code>cran_code %&gt;%
   group_by(language) %&gt;%  # group by langauge
   summarise(lang_count = n(),  # calc number of packages by language
@@ -494,9 +494,9 @@ cran_perc_lang %&gt;%
   ggplot(aes(perc_lang)) +
   geom_histogram(fill = &quot;steelblue&quot;, colour = &quot;black&quot;, binwidth = 0.1) +
   scale_x_continuous(labels = percent) +  # use % on x axis
-  labs(title = paste0(&quot;% of &quot;, params$perc_comparison, &quot; used in packges on CRAN (&quot;, nrow(cran_perc_lang), &quot; packages)&quot;), 
+  labs(title = paste0(&quot;% of &quot;, params$perc_comparison, &quot; used in packages on CRAN (&quot;, nrow(cran_perc_lang), &quot; packages)&quot;), 
        x = &quot;&quot;, y = &quot;No. of Packages&quot;)</code></pre>
-<p><img src="tt_2019_week46_files/figure-html/perc-r-in-use-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="tt_2019_week46_files/figure-html/perc-lang-in-use-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 
 

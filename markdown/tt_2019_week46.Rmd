@@ -18,7 +18,7 @@ params:
 
 ***
 
-A copy of the RMarkdown file can be dowloaded from [here](/docs/tt_2019_week46.Rmd)
+A copy of the RMarkdown file can be downloaded from [here](/docs/tt_2019_week46.Rmd)
 
 ***
 
@@ -49,7 +49,7 @@ params:
 
 `params$top_n` and `params$perc_comparison` can be used throughout the document as variables.
 
-The document can be knitted with the defalut values by clicking the `Knit` button or specific values using `rmarkdown::render("Week46_crand.Rmd, params = list(top_n = 20, perc_comparison = "R"))"`.
+The document can be knitted with the default values by clicking the `Knit` button or specific values using `rmarkdown::render("Week46_crand.Rmd, params = list(top_n = 20, perc_comparison = "R"))"`.
 
 A user interface can be used by selecting `Knit with Parameters` from the dropdown menu for `Knit`, or `rmarkdown::render("MyDocument.Rmd", params = "ask")`.
 
@@ -68,7 +68,7 @@ cran_code <-
 ```
 
 
-## Top `r params$top_n` Laguages
+## Top `r params$top_n` Languages
 
 ```{r top n by package, warning=FALSE, fig.align='center'}
 cran_code %>%
@@ -102,7 +102,7 @@ cran_language_summary %>%
 
 ## % of `r params$perc_comparison` Used
 
-```{r perc-r-in-use, warning=FALSE, echo=FALSE, include=FALSE}
+```{r perc-lang-in-use, warning=FALSE, echo=FALSE, include=FALSE}
 # must be a neater way of calculating this
 cran_code %>%
   group_by(pkg_name) %>%  # group by package name
@@ -121,7 +121,7 @@ cran_perc_lang %>%
   ggplot(aes(perc_lang)) +
   geom_histogram(fill = "steelblue", colour = "black", binwidth = 0.1) +
   scale_x_continuous(labels = percent) +  # use % on x axis
-  labs(title = paste0("% of ", params$perc_comparison, " used in packges on CRAN (", nrow(cran_perc_lang), " packages)"), 
+  labs(title = paste0("% of ", params$perc_comparison, " used in packages on CRAN (", nrow(cran_perc_lang), " packages)"), 
        x = "", y = "No. of Packages")
 ```
 
@@ -129,7 +129,7 @@ cran_perc_lang %>%
 Out of the `r cran_code$pkg_name %>% unique() %>% length() %>% prettyNum(big.mark = ",")` packages,  `r length(unique(cran_code$pkg_name)) - nrow(cran_perc_lang)` package has no code, which leaves `r nrow(cran_perc_lang) %>% prettyNum(big.mark = ",")` packages which contain some code. Of those packages containing some code `r sum(cran_perc_lang$perc_lang == 0)` contain no R code and `r sum(cran_perc_lang$perc_lang == 1) %>% prettyNum(big.mark = ",")` packages contain only R code.
 
 
-```{r perc-r-in-use, fig.align='center'}
+```{r perc-lang-in-use, fig.align='center'}
 ```
 
 
