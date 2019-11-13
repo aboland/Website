@@ -25,6 +25,8 @@ I'm also an occasional lecturer in the [School of Mathematics and Statistics](ht
 
 ### Background
 
+- Edge by Ascential (Clavis Insight)  
+Clavis Insight were acquired by Ascential in 2017, and rebranded as [Edge by Ascential](https://www.ascentialedge.com/) in 2018. I have worked in Clavis Insight and subsequently Edge by Ascential since 2016.
 - Postdoc (2016)  
 I completed a year as a Postdoctoral researcher in the [Insight Center for Data Analytics](https://www.insight-centre.org/) at [UCD](http://www.ucd.ie/) with [Andrew Parnell](http://mathsci.ucd.ie/~parnell_a/) (2016). The project was in conjunction with [Clavis Insight](http://clavisinsight.com/) and focused on machine learning algorithms, in particular supervised and unsupervised text classification.
 - PhD (2011 - 2014)  

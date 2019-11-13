@@ -18,7 +18,7 @@ params:
 
 ***
 
-A copy of the RMD file can be dowloaded from [here](/docs/tt_2019_week46.Rmd)
+A copy of the RMarkdown file can be dowloaded from [here](/docs/tt_2019_week46.Rmd)
 
 ***
 
