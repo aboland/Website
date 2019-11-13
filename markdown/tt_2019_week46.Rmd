@@ -22,6 +22,43 @@ A copy of the RMarkdown file can be dowloaded from [here](/docs/tt_2019_week46.R
 
 ***
 
+
+## RMarkdown with Parameters
+
+This document makes use of parameters. These can be included using the params argument in the preamble of the markdown document.
+
+```{r, eval=FALSE}
+---
+title: "2019 - Week 46 - CRAN"
+params:
+  top_n:
+    label: "Top n languages"
+    value: 20
+    input: slider
+    min: 1
+    max: 100
+    step: 1
+  perc_comparison:
+    label: "Language to Compare"
+    value: R
+    input: select
+    choices: ["R", "C", "HTML", "C++", "SVG", "JavaScript"]
+---
+```
+
+
+`params$top_n` and `params$perc_comparison` can be used throughout the document as variables.
+
+The document can be knitted with the defalut values by clicking the `Knit` button or specific values using `rmarkdown::render("Week46_crand.Rmd, params = list(top_n = 20, perc_comparison = "R"))"`.
+
+A user interface can be used by selecting `Knit with Parameters` from the dropdown menu for `Knit`, or `rmarkdown::render("MyDocument.Rmd", params = "ask")`.
+
+See [here](https://bookdown.org/yihui/rmarkdown/params-knit.html) for more information on parameters.
+
+<br><br>
+
+***
+
 ```{r setup, include=TRUE, warning=FALSE, message=FALSE}
 library(ggplot2)
 library(scales)
@@ -30,8 +67,6 @@ cran_code <-
   readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-11-12/loc_cran_packages.csv")
 ```
 
-**Note**: `params$top_n` and `params$perc_comparison`, which are used throughout are markdown parameters, for this specific rendering they are `r params$top_n` and "`r params$perc_comparison`" respectively.  
-See the [RMarkdown with Parameters] sections at the end for more info.
 
 ## Top `r params$top_n` Laguages
 
@@ -98,40 +133,4 @@ Out of the `r cran_code$pkg_name %>% unique() %>% length() %>% prettyNum(big.mar
 ```
 
 
-
-
-
-<br><br><br><br>
-
-## RMarkdown with Parameters
-
-This document makes use of parameters. These can be included using the params argument in the preamble of the markdown document.
-
-```{r, eval=FALSE}
----
-title: "2019 - Week 46 - CRAN"
-params:
-  top_n:
-    label: "Top n languages"
-    value: 20
-    input: slider
-    min: 1
-    max: 100
-    step: 1
-  perc_comparison:
-    label: "Language to Compare"
-    value: R
-    input: select
-    choices: ["R", "C", "HTML", "C++", "SVG", "JavaScript"]
----
-```
-
-
-`params$top_n` and `params$perc_comparison` can be used throughout the document as a variables.
-
-The document can be knitted with the defalut values by clicking the `Knit` button or specific values using `rmarkdown::render("Week46_crand.Rmd, params = list(top_n = 20, perc_comparison = "R"))"`.
-
-A user interface can be used by selecting `Knit with Parameters` from the dropdown menu for `Knit`, or `rmarkdown::render("MyDocument.Rmd", params = "ask")`.
-
-See [here](https://bookdown.org/yihui/rmarkdown/params-knit.html) for more information on parameters.
 
