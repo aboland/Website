@@ -43,10 +43,14 @@ navbar:
         - text: "About"
           href: tt_home.html
         - text: "-------"
+        - text: "2019"
+        - text: "Week46 - CRAN"
+          href: tt_2019_week46.html
+        - text: "-------"
         - text: "2018"
-        - text: "Week 32 -  US Turbine Data"
+        - text: "Week 32 - US Turbine Data"
           href: tt_2018_week32.html
-        - text: "Week 30 -  Movie Data"
+        - text: "Week 30 - Movie Data"
           href: tt_2018_week30.html
         - text: "Week 28 - US Voter Data"
           href: tt_2018_week28.html
