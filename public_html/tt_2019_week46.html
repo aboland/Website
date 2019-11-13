@@ -11,7 +11,7 @@
 
 
 
-<title>Week 5 - 2018</title>
+<title>2019 - Week 46 - CRAN</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -408,109 +408,96 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Week 5 - 2018</h1>
+<h1 class="title toc-ignore">2019 - Week 46 - CRAN</h1>
 
 </div>
 
 
 <hr />
-<div id="data" class="section level3">
-<h3>Data</h3>
-<p>The data for tidy tuesday week 5 is <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-04-30">US census data</a>. The data contains information at a county level for a number of different variables/factors, such as population, income, and employment. More information on the dat acan be found <a href="https://www.kaggle.com/muonneutrino/us-census-demographic-data">here</a>.</p>
-</div>
-<div id="map-plot" class="section level3">
-<h3>Map plot</h3>
-<p>The <a href="https://CRAN.R-project.org/package=maps" target="_blank">maps</a> library can be used to create plots of geographical data.</p>
-<p>I decided to create a function which would plot the data on a map. The function takes any of the numerical variables in the data and will output a heatmap of that variable.</p>
-<p><img src="tt_2018_week5_files/figure-html/county%20plots-1.png" width="672" style="display: block; margin: auto;" /><img src="tt_2018_week5_files/figure-html/county%20plots-2.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="code" class="section level2">
-<h2>Code</h2>
-<pre class="r"><code>library(readr)
-library(dplyr)
-library(ggplot2)
-library(maps)
+<p>A copy of the RMD file can be dowloaded from <a href="/docs/tt_2019_week46.Rmd">here</a></p>
+<hr />
+<pre class="r"><code>library(ggplot2)
 library(scales)
+library(dplyr)
+cran_code &lt;- 
+  readr::read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-11-12/loc_cran_packages.csv&quot;)</code></pre>
+<p><strong>Note</strong>: <code>params$top_n</code> and <code>params$perc_comparison</code>, which are used throughout are markdown parameters, for this specific rendering they are 20 and “R” respectively.<br />
+See the <a href="#rmarkdown-with-parameters">RMarkdown with Parameters</a> sections at the end for more info.</p>
+<div id="top-20-laguages" class="section level2">
+<h2>Top 20 Laguages</h2>
+<pre class="r"><code>cran_code %&gt;%
+  group_by(language) %&gt;%  # group by langauge
+  summarise(lang_count = n(),  # calc number of packages by language
+            lang_lines = sum(code)  # calc number of lines of code by language
+            ) -&gt; cran_language_summary
 
-tidy_tuesday5 &lt;- read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018/2018-04-30/week5_acs2015_county_data.csv&quot;)
-
- # County map data
-counties &lt;- map_data(&quot;county&quot;)
-
- # Combined county data
-all_county &lt;- tidy_tuesday5 %&gt;% 
-  mutate(County = tolower(County), State = tolower(State)) %&gt;%
-  inner_join(counties, by = c(&quot;County&quot; = &quot;subregion&quot;, &quot;State&quot; = &quot;region&quot;))
-
-county_plot &lt;- function(x, legend_format = number){
-  ggplot(data = all_county, mapping = aes(x = long, y = lat, group = group)) + 
-    coord_fixed(1.3) + 
-    geom_polygon(aes_string(fill = x), color = &quot;grey&quot;, size = 0.05) +
-    scale_fill_distiller(palette = &quot;Spectral&quot;, labels = legend_format) +
-    theme_void() +
-    theme(plot.margin = unit(c(0,0,0,0), &quot;cm&quot;))
-}
-
-county_plot(&quot;Income&quot;, dollar)  # the second argument can be used to format the legend (see `scales` package)
-county_plot(&quot;MeanCommute&quot;, number_format(suffix = &quot; mins&quot;))</code></pre>
-<p><br><br />
-<br></p>
-<div id="twitter" class="section level3">
-<h3>Twitter</h3>
-<br>
-<div align="center">
-<blockquote class="twitter-tweet" data-lang="en">
-<p lang="en" dir="ltr">
-For <a href="https://twitter.com/hashtag/TidyTuesday?src=hash&amp;ref_src=twsrc%5Etfw">#TidyTuesday</a> I created simple function which allows you to plot any continuous variable in the data on a map <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/r4ds?src=hash&amp;ref_src=twsrc%5Etfw">#r4ds</a> <a href="https://t.co/6Q1I121VqI">pic.twitter.com/6Q1I121VqI</a>
-</p>
-— Aidan Boland (<span class="citation">@AidoBo</span>) <a href="https://twitter.com/AidoBo/status/991338257391804416?ref_src=twsrc%5Etfw">May 1, 2018</a>
-</blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+cran_language_summary %&gt;%
+  top_n(params$top_n, lang_count) %&gt;%  # filter by top n using params$top_n
+  ggplot(aes(x = reorder(language, lang_count, decreasing = T) , y = lang_count)) +
+  geom_histogram(stat = &quot;identity&quot;, fill = &quot;steelblue&quot;) +
+  scale_y_continuous(labels = comma) +  # display large numbers with a comma
+  coord_flip() +  # flip plot to see language names better
+  labs(title = paste0(&quot;Top &quot;, params$top_n,&quot; Languages on CRAN (by number of packages)&quot;), y = &quot;Number of Packages&quot;, x = &quot;&quot;)</code></pre>
+<p><img src="tt_2019_week46_files/figure-html/top%20n%20by%20package-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>cran_language_summary %&gt;%
+  top_n(params$top_n, lang_lines) %&gt;%  # filter by top n using params$top_n
+  ggplot(aes(x = reorder(language, lang_lines, decreasing = T) , y = lang_lines)) +
+  geom_histogram(stat = &quot;identity&quot;, fill = &quot;steelblue&quot;) +
+  scale_y_continuous(labels = comma) +
+  coord_flip() +
+  labs(title = paste0(&quot;Top &quot;, params$top_n,&quot; Languages on CRAN (by lines of code)&quot;), 
+       x = &quot;&quot;, y = &quot;Lines of Code&quot;)</code></pre>
+<p><img src="tt_2019_week46_files/figure-html/top-n-by-lines-code-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<p><br></p>
+<div id="of-r-used" class="section level2">
+<h2>% of R Used</h2>
+<p>Out of the 14,699 packages, 1 package has no code, which leaves 14,698 packages which contain some code. Of those packages containing some code 11 contain no R code and 5,509 packages contain only R code.</p>
+<pre class="r"><code># must be a neater way of calculating this
+cran_code %&gt;%
+  group_by(pkg_name) %&gt;%  # group by package name
+  summarise(total_lines = sum(code)) %&gt;%  # calc total lines
+  left_join(
+    cran_code %&gt;%
+      filter(language == params$perc_comparison) %&gt;%  # filter R only
+      select(pkg_name, code),  # select relevant variables
+    by = &quot;pkg_name&quot;  # join using `pkg_name`
+    ) %&gt;%
+  mutate(code = ifelse(is.na(code), 0, code),  # change na&#39;s to 0 
+         perc_lang = code/total_lines) %&gt;%  # calc % of R
+  na.omit() -&gt; cran_perc_lang
+
+cran_perc_lang %&gt;%
+  ggplot(aes(perc_lang)) +
+  geom_histogram(fill = &quot;steelblue&quot;, colour = &quot;black&quot;, binwidth = 0.1) +
+  scale_x_continuous(labels = percent) +  # use % on x axis
+  labs(title = paste0(&quot;% of &quot;, params$perc_comparison, &quot; used in packges on CRAN (&quot;, nrow(cran_perc_lang), &quot; packages)&quot;), 
+       x = &quot;&quot;, y = &quot;No. of Packages&quot;)</code></pre>
+<p><img src="tt_2019_week46_files/figure-html/perc-r-in-use-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><br><br><br><br></p>
 </div>
-</div>
-<div id="extra-code" class="section level2">
-<h2>Extra Code</h2>
-<div id="state-version" class="section level3">
-<h3>State version</h3>
-<p>I also created a version to plot data on a state level</p>
-<pre class="r"><code> # State map data
-states &lt;- map_data(&quot;state&quot;)
-
- # Aggregated state data
-all_state &lt;- tidy_tuesday5 %&gt;%
-  group_by(State = State) %&gt;%
-  summarise(Pop = sum(TotalPop),
-            Income = mean(Income, na.rm = T),
-            Men = sum(Men), Women = sum(Women),
-            Unemployment_tot = sum(Unemployment * 0.01 * TotalPop)) %&gt;%
-  mutate(Ratio_men = Men / (Men + Women), 
-         Unemployment = Unemployment_tot/Pop, 
-         State = tolower(State)) %&gt;%
-  inner_join(states, by = c(&quot;State&quot; = &quot;region&quot;))
-
-
- # Function to plot variable
-state_plot &lt;- function(x, legend_format=number){
-  ggplot(data = states, mapping = aes(x = long, y = lat, group = group)) +
-    coord_fixed(1.3) +
-    geom_polygon(data = all_state, aes_string(fill = x), color = &quot;white&quot;) +
-    geom_polygon(color = &quot;black&quot;, fill = NA) +
-    scale_fill_distiller(palette = &quot;Spectral&quot;, labels = legend_format) +
-    theme_void()
-}
-
-
-state_plot(&quot;Pop&quot;, comma)</code></pre>
-<p><img src="tt_2018_week5_files/figure-html/state%20function-1.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>state_plot(&quot;Ratio_men&quot;, percent_format(accuracy=1))</code></pre>
-<p><img src="tt_2018_week5_files/figure-html/state%20function-2.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>state_plot(&quot;Income&quot;, dollar)</code></pre>
-<p><img src="tt_2018_week5_files/figure-html/state%20function-3.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>state_plot(&quot;Unemployment&quot;, percent_format(accuracy=1))</code></pre>
-<p><img src="tt_2018_week5_files/figure-html/state%20function-4.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
+<div id="rmarkdown-with-parameters" class="section level2">
+<h2>RMarkdown with Parameters</h2>
+<p>This document makes use of parameters. These can be included using the params argument in the preamble of the markdown document.</p>
+<pre class="r"><code>---
+title: &quot;2019 - Week 46 - CRAN&quot;
+params:
+  top_n:
+    label: &quot;Top n languages&quot;
+    value: 20
+    input: slider
+    min: 1
+    max: 100
+    step: 1
+  perc_comparison:
+    label: &quot;Language to Compare&quot;
+    value: R
+    input: select
+    choices: [&quot;R&quot;, &quot;C&quot;, &quot;HTML&quot;, &quot;C++&quot;, &quot;SVG&quot;, &quot;JavaScript&quot;]
+---</code></pre>
+<p><code>params$top_n</code> and <code>params$perc_comparison</code> can be used throughout the document as a variables.</p>
+<p>The document can be knitted with the defalut values by clicking the <code>Knit</code> button or specific values using <code>rmarkdown::render(&quot;Week46_crand.Rmd, params = list(top_n = 20, perc_comparison = &quot;R&quot;))&quot;</code>.</p>
+<p>A user interface can be used by selecting <code>Knit with Parameters</code> from the dropdown menu for <code>Knit</code>, or <code>rmarkdown::render(&quot;MyDocument.Rmd&quot;, params = &quot;ask&quot;)</code>.</p>
+<p>See <a href="https://bookdown.org/yihui/rmarkdown/params-knit.html">here</a> for more information on parameters.</p>
 </div>
 
 
