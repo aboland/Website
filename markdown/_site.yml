@@ -5,7 +5,7 @@ navbar:
     - text: "Documents"
       menu:
         - text: "CV"
-          href: /docs/cv-WEB-industry.pdf
+          href: /docs/cv-WEB.pdf
         - text: "-------"
         - text: "Presentations"
         - text: "Young-ISA 2019"
