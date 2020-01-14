@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -85,7 +85,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -234,6 +233,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -245,18 +245,6 @@ $(document).ready(function () {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -420,16 +408,20 @@ It is a great way of practicing with differnt types of data and using different 
 <div id="my-attempts" class="section level3">
 <h3>My Attempts</h3>
 <div id="section" class="section level4">
+<h4>2019</h4>
+<p><a href="tt_2019_week46.html">Week 46 - CRAN</a></p>
+</div>
+<div id="section-1" class="section level4">
 <h4>2018</h4>
-<p><a href="tidytuesday/week32.html">Week 32 - US Turbine Data</a><br />
-<a href="tidytuesday/week30.html">Week 30 - Movie Data</a><br />
-<a href="tidytuesday/week28.html">Week 28 - US Voter Data</a><br />
-<a href="tidytuesday/week5.html">Week 5 - US Census Data</a></p>
+<p><a href="tt_2018_week32.html">Week 32 - US Turbine Data</a><br />
+<a href="tt_2018_week30.html">Week 30 - Movie Data</a><br />
+<a href="tt_2018_week28.html">Week 28 - US Voter Data</a><br />
+<a href="tt_2018_week5.html">Week 5 - US Census Data</a></p>
 <p><br></p>
 </div>
 </div>
 <div id="week-28---us-voter-data" class="section level3">
-<h3>Week 28 - US Voter Data</h3>
+<h3>2018 - Week 28 - US Voter Data</h3>
 <p>One of my attempts was in <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-10-09" target="_blank">week 28 in 2018 (09/10/2018)</a>, which was voter turnout data from 1980 to 2014 for the USA. It included the number of age-eligible voters versus total ballots/votes counted by state and year. I decided to try and use the <a href="https://github.com/thomasp85/gganimate" target="_blank">gganimate</a> library to create an animated plot.</p>
 <p>The animation shows the number of elgible voters versus the number of votes over time.</p>
 <p><img src="tt_home_files/figure-html/week28_code-1.gif" style="display: block; margin: auto;" /></p>
@@ -480,6 +472,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

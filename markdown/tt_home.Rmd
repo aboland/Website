@@ -10,15 +10,18 @@ It is a great way of practicing with differnt types of data and using different 
 <br>  
 
 ### My Attempts
+#### 2019
+[Week 46 - CRAN](tt_2019_week46.html)  
+
 #### 2018
-[Week 32 - US Turbine Data](tidytuesday/week32.html)  
-[Week 30 - Movie Data](tidytuesday/week30.html)  
-[Week 28 - US Voter Data](tidytuesday/week28.html)  
-[Week 5 - US Census Data](tidytuesday/week5.html)
+[Week 32 - US Turbine Data](tt_2018_week32.html)  
+[Week 30 - Movie Data](tt_2018_week30.html)  
+[Week 28 - US Voter Data](tt_2018_week28.html)  
+[Week 5 - US Census Data](tt_2018_week5.html)
 
 <br>  
 
-### Week 28 - US Voter Data  
+### 2018 - Week 28 - US Voter Data  
 
 One of my attempts was in
 <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-10-09" target="_blank">week 28 in 2018 (09/10/2018)</a>,
