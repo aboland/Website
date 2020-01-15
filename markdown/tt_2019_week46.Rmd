@@ -63,6 +63,9 @@ See [here](https://bookdown.org/yihui/rmarkdown/params-knit.html) for more infor
 library(ggplot2)
 library(scales)
 library(dplyr)
+```
+
+```{r read data, cache=TRUE, message=FALSE}
 cran_code <- 
   readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-11-12/loc_cran_packages.csv")
 ```
