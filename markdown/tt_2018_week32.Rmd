@@ -359,7 +359,7 @@ location_animation <- ggplot() +
   ylim(range(states$lat)) + 
   theme_void() + 
   labs(title = "Location of wind turbines in the USA",
-       subtitle = 'Year: {frame_time}') +
+       subtitle = 'Year: {as.integer(frame_time)}') +
   # animations settings, shdow_mark sticks points onto the map
   transition_time(p_year) + 
   shadow_mark(colour = 'blue')  
