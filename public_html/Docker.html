@@ -415,23 +415,26 @@ $(document).ready(function () {
 
 <!-- Ever had problems with sharing code? Missing libraries or different versions of R? One solution is to use Docker as a method for sharing work. -->
 <p>Docker is a very useful method of creating and running isolated versions of software. It is useful because working versions of software can be built and run using only the necessary libraries. Another useful feature is that the libraries used to build the software are fixed, and when sharing a Docker image it will run identically on different machines. For example, if you build and run a simulation using R 3.6.0, you can build a Docker image containing your code and R 3.6.0. This image can be shared with anyone and it will allow them to run your code using R 3.6.0, an exact replica of the environment you originally used.</p>
-<div id="getting-started" class="section level2">
-<h2>Getting Started</h2>
-<p>For a more general introduction to Docker and help with installation and setup, see the following page: <a href="https://docs.docker.com/get-started/">docs.docker.com/get-started</a> (4 min read).</p>
-<div id="docker-images-and-containers" class="section level4">
-<h4>Docker Images and Containers</h4>
-<p>An image is a template for an environment, software and files. Images are created using a Dockerfile which is covered later in this document. A container is a runnable instance of an image. Once an image is created, a container can be started using this image; at this stage the software will be live on the host machine. For example, if an RStudio container is running, then a copy of RStudio will be available to use. This copy will be independent of any other local version of RStudio.</p>
-<p>You can have many containers running simultaneously on your machine, and in general they will be isolated and independent of each other.</p>
-<p>Images and containers can be managed through commands on a terminal or a bash shell.</p>
+<div id="installation" class="section level4">
+<h4>Installation</h4>
+<p>This document gives an introduction with a focus on using R, for a more general introduction to Docker and help with installation and setup, see the following page: <a href="https://docs.docker.com/get-started/">docs.docker.com/get-started</a> (4 min read).</p>
+<p><br></p>
+</div>
+<div id="introduction-to-docker" class="section level2">
+<h2>Introduction to Docker</h2>
+<div id="images-and-containers" class="section level3">
+<h3>Images and Containers</h3>
+<p>A Docker image is a template for an environment, software and files. Images are created using a Dockerfile which is covered later in this document. A Docker container is a runnable instance of an image. Once an image is created, a container can be started using this image; at this stage the software will be live on the host machine. For example, if an RStudio container is running, then a copy of RStudio will be available to use. This copy will be independent of any other local version of RStudio.</p>
+<p>You can have many containers running simultaneously on your machine, and in general they will be isolated and independent of each other. Images and containers can be managed through commands on a terminal or a bash shell.</p>
 <!-- For a more detailed explanation see [this guide](https://docs.docker.com/get-started/overview/). -->
 </div>
-</div>
-<div id="docker-and-r" class="section level2">
-<h2>Docker and R</h2>
-<p>There are many different R and RStudio images.</p>
+<div id="docker-and-r" class="section level3">
+<h3>Docker and R</h3>
+<p>There are many different R and RStudio Docker images.</p>
 <p>Official R images can be found here: <a href="https://hub.docker.com/_/r-base">https://hub.docker.com/_/r-base</a></p>
 <p>RStudio and Shiny server images can be found here: <a href="https://hub.docker.com/u/rocker">https://hub.docker.com/u/rocker</a></p>
 <p>An image can be downloaded using the <code>docker pull</code> command. Alternatively, when <code>docker run</code> is used if the image is not found on your local system it will be downloaded.</p>
+</div>
 <div id="starting-an-rstudio-container" class="section level3">
 <h3>Starting an RStudio Container</h3>
 <p>To run an RStudio image use the following command in terminal:</p>
@@ -450,14 +453,14 @@ CONTAINER ID  IMAGE                 COMMAND  CREATED        STATUS        PORTS 
 96f368aefb83  rocker/rstudio:3.6.0  &quot;/init&quot;  9 seconds ago  Up 8 seconds  0.0.0.0:8787-&gt;8787/tcp  my-rstudio</code></pre>
 <div id="opening-rstudio" class="section level4">
 <h4>Opening RStudio</h4>
-<p>RStudio can now be opened by going to <code>localhost:8787</code> in a web browser. The username will be <code>rstudio</code> and password will be the variable provided. In the case above I picked <code>yourpassword</code>.</p>
+<p>RStudio can now be opened by going to <a href="http://localhost:8787/">localhost:8787</a> in a web browser. The username will be <code>rstudio</code> and password will be the environment variable provided. In the case above I picked <code>yourpassword</code>.</p>
 <p><img src="images/rstudio_login.png" width="600" style="display: block; margin: auto;" /></p>
 </div>
-<div id="running-multiple-containers" class="section level4">
-<h4>Running Multiple Containers</h4>
+</div>
+<div id="running-multiple-containers" class="section level3">
+<h3>Running Multiple Containers</h3>
 <p>The <code>-p</code> flag in the run command determines which port RStudio can be found at. For example, if we used <code>-p 8000:8787</code> RStudio will then be accessible using <code>localhost:8000</code> in a web browser. This is useful when running multiple versions of R and RStudio, because each container will need to be routed through a different port.</p>
 <p>Note: more advanced uses of Docker containers allow communication between containers, but this will not be covered here. See the <a href="https://docs.docker.com/">Docker website</a> for further reading.</p>
-</div>
 </div>
 <div id="versions-of-r" class="section level3">
 <h3>Versions of R</h3>
@@ -477,10 +480,10 @@ CONTAINER ID  IMAGE                 COMMAND  CREATED        STATUS        PORTS 
 <p><br></p>
 </div>
 </div>
-<div id="reproducible-research" class="section level2">
-<h2>Reproducible Research</h2>
+<div id="building-your-own-image---reproducible-research" class="section level2">
+<h2>Building Your Own Image - Reproducible Research</h2>
 <p>For reproducible research the environment used each time to run the code should match as much as possible. Details such as the version of R and the version of individual packages/libraries can have an effect on the final results.</p>
-<p>We have seen that a specific version of R can be chosen when using Docker. R scripts can also be included in a custom Docker image.</p>
+<p>We have seen that a specific version of R can be chosen when using Docker. R scripts and data can also be included in a custom Docker image.</p>
 <p>A complete standalone environment can be created so that an end user does not need to worry about installing any extra libraries or having specific software installed. The only requirement is to have Docker installed.</p>
 <div id="dockerfile" class="section level3">
 <h3>Dockerfile</h3>
@@ -530,15 +533,16 @@ COPY Docker/Simple_Example/sample_script.R /home/rstudio/</code></pre>
 </div>
 <div id="sharing-images" class="section level3">
 <h3>Sharing Images</h3>
-<p>Images can be stored and shared using the Docker central repository.</p>
+<p>Images can be stored and shared using the <a href="https://hub.docker.com/">Docker central repository</a>.</p>
 <p>The only requirement to run an image is to have Docker installed. A person would not need R or RStudio installed on their local machine. It’s even possible to include a copy of LaTeX with an image so that PDF document’s can be knitted.</p>
 <p>For more detailed information on setting up a Docker account and sharing images see <a href="https://docs.docker.com/get-started/part3/">this tutorial</a>.</p>
 <p>In short, it’s possible to tag an image with your Docker account and save it in the central repository. Once here anyone can then pull and run the image.</p>
 <pre class="bash"><code>$ docker tag image_name:tag &lt;Your Docker ID&gt;/image_name:tag
 $ docker push &lt;Your Docker ID&gt;/image_name:tag</code></pre>
 <p><br></p>
-<div id="example" class="section level4">
-<h4>Example</h4>
+</div>
+<div id="example" class="section level3">
+<h3>Example</h3>
 <p>The following example uses the files contained in <a href="https://github.com/aboland/ReproducibleResearch">this Github repository</a>.</p>
 <p>Navigating to the root directory of the repository using terminal, and running the following commands builds and pushes the image.</p>
 <pre class="bash"><code>$ docker build -t sample_rstudio:1.0 -f Docker/SimpleDockerfile .
@@ -558,26 +562,25 @@ $ docker push bolandai/sample_rstudio:1.0</code></pre>
 <p><br><br><br></p>
 </div>
 </div>
-</div>
 <div id="advanced-use" class="section level1">
 <h1>Advanced Use</h1>
-<div id="linking-to-local-directory" class="section level2">
-<h2>Linking to local directory</h2>
+<div id="linking-to-local-directory" class="section level3">
+<h3>Linking to local directory</h3>
 <p>It was mentioned earlier that Docker containers are completely isolated. However, sometimes it is necessary to communicate outside of the container, for example to save data on your the local machine.</p>
 <p>The Docker container can be linked with a local folder at the time of starting the container. The <code>-v</code> flag is used for this purpose. The below command will link the RStudio home folder with the desktop of the local machine running the container. Anything saved or edited in the home folder when using the container will be stored on the local desktop.</p>
 <pre class="bash"><code>$ docker run -d -p 8787:8787 -e PASSWORD=mypassword -v ~/Desktop:/home/rstudio/ bolandai/sample_rstudio</code></pre>
 </div>
-<div id="continuous-integration-git-travis" class="section level2">
-<h2>Continuous Integration (Git &amp; Travis)</h2>
+<div id="continuous-integration-git-travis" class="section level3">
+<h3>Continuous Integration (Git &amp; Travis)</h3>
 <p>To create a nice workflow, it’s possible to automate the Docker build process. Once code is stored on Github, the docker image can be remotely built when the code is updated.</p>
 <p>Two options for this are to use Docker Hub or Travis CI</p>
-<div id="docker-hub" class="section level3">
-<h3>Docker Hub</h3>
+<div id="docker-hub" class="section level4">
+<h4>Docker Hub</h4>
 <p>Docker Hub which is used for storing and sharing images can be linked to Github so that the image is automatically built for specific branches when code is updated.</p>
 <p>See <a href="https://docs.docker.com/docker-hub/builds/">this article</a> for more information.</p>
 </div>
-<div id="travis-ci" class="section level3">
-<h3>Travis CI</h3>
+<div id="travis-ci" class="section level4">
+<h4>Travis CI</h4>
 <p>An alternative is to use <a href="https://travis-ci.org/">Travis CI</a>. Travis CI must also be linked to Github in order to work. As well as building the Docker image, Travis CI can also be used to build and test personal R packages.</p>
 <p>An example of using Travis CI can be seen <a href="https://travis-ci.org/github/aboland/ReproducibleResearch">here</a>.</p>
 </div>
