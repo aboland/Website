@@ -56,6 +56,10 @@ navbar:
           href: tt_2018_week28.html
         - text: "Week 5 - US Census Data"
           href: tt_2018_week5.html
+    - text: "Other"
+      menu:
+        - text: "Docker Intro"
+          href: Docker.html
   right:
     - icon: fa-linkedin fa-lg
       href: https://www.linkedin.com/in/aidanboland/

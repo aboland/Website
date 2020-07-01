@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Sharing and Running R code using Docker</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">aboland.ie</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Documents
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="/docs/cv-WEB.pdf">CV</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Presentations</li>
+    <li>
+      <a href="/docs/Young-ISA2019.html">Young-ISA 2019</a>
+    </li>
+    <li>
+      <a href="/docs/EARL2017.pdf">EARL Boston 2017</a>
+    </li>
+    <li>
+      <a href="/docs/CASI2015.pdf">CASI 2015</a>
+    </li>
+    <li>
+      <a href="/docs/RSC2014.pdf">RSC 2014</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Posters</li>
+    <li>
+      <a href="/docs/casi_2018.html">CASI 2018</a>
+    </li>
+    <li>
+      <a href="/docs/NIPS2015.pdf">Workshop at NIPS 2015</a>
+    </li>
+    <li>
+      <a href="/docs/Insight2014.pdf">Insight Conference 2014</a>
+    </li>
+    <li>
+      <a href="/docs/CASI2013.pdf">CASI 2013</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Shiny Apps
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="http://rtpi.aboland.ie">Dublin Public Transport</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="http://ff.aboland.ie">Premier League Stats</a>
+    </li>
+    <li>
+      <a href="http://gaa.aboland.ie">GAA Stats</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="http://correlation.aboland.ie">Teaching App</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Tidy Tuesday
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="tt_home.html">About</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">2019</li>
+    <li>
+      <a href="tt_2019_week46.html">Week46 - CRAN</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">2018</li>
+    <li>
+      <a href="tt_2018_week32.html">Week 32 - US Turbine Data</a>
+    </li>
+    <li>
+      <a href="tt_2018_week30.html">Week 30 - Movie Data</a>
+    </li>
+    <li>
+      <a href="tt_2018_week28.html">Week 28 - US Voter Data</a>
+    </li>
+    <li>
+      <a href="tt_2018_week5.html">Week 5 - US Census Data</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Other
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Docker.html">Docker Intro</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://www.linkedin.com/in/aidanboland/">
+    <span class="fa fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://github.aboland.ie/">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/BolandAi">
+    <span class="fa fa-twitter fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Sharing and Running R code using Docker</h1>
+
+</div>
+
+
+<!-- Ever had problems with sharing code? Missing libraries or different versions of R? One solution is to use Docker as a method for sharing work. -->
+<p>Docker is a very useful method of creating and running isolated versions of software. It is useful because working versions of software can be built and run using only the necessary libraries. Another useful feature is that the libraries used to build the software are fixed, and when sharing a Docker image it will run identically on different machines. For example, if you build and run a simulation using R 3.6.0, you can build a Docker image containing your code and R 3.6.0. This image can be shared with anyone and it will allow them to run your code using R 3.6.0, an exact replica of the environment you originally used.</p>
+<div id="getting-started" class="section level2">
+<h2>Getting Started</h2>
+<p>For a more general introduction to Docker and help with installation and setup, see the following page: <a href="https://docs.docker.com/get-started/">docs.docker.com/get-started</a> (4 min read).</p>
+<div id="docker-images-and-containers" class="section level4">
+<h4>Docker Images and Containers</h4>
+<p>An image is a template for an environment, software and files. Images are created using a Dockerfile which is covered later in this document. A container is a runnable instance of an image. Once an image is created, a container can be started using this image; at this stage the software will be live on the host machine. For example, if an RStudio container is running, then a copy of RStudio will be available to use. This copy will be independent of any other local version of RStudio.</p>
+<p>You can have many containers running simultaneously on your machine, and in general they will be isolated and independent of each other.</p>
+<p>Images and containers can be managed through commands on a terminal or a bash shell.</p>
+<!-- For a more detailed explanation see [this guide](https://docs.docker.com/get-started/overview/). -->
+</div>
+</div>
+<div id="docker-and-r" class="section level2">
+<h2>Docker and R</h2>
+<p>There are many different R and RStudio images.</p>
+<p>Official R images can be found here: <a href="https://hub.docker.com/_/r-base">https://hub.docker.com/_/r-base</a></p>
+<p>RStudio and Shiny server images can be found here: <a href="https://hub.docker.com/u/rocker">https://hub.docker.com/u/rocker</a></p>
+<p>An image can be downloaded using the <code>docker pull</code> command. Alternatively, when <code>docker run</code> is used if the image is not found on your local system it will be downloaded.</p>
+<div id="starting-an-rstudio-container" class="section level3">
+<h3>Starting an RStudio Container</h3>
+<p>To run an RStudio image use the following command in terminal:</p>
+<pre class="bash"><code>$ docker run -detach -p 8787:8787 -e PASSWORD=yourpassword --name my-rstudio rocker/rstudio</code></pre>
+<p>There are a few things to note, namely the flags used in the run command:</p>
+<ul>
+<li><code>-detach</code> or <code>-d</code> for short, runs the container in the background of your terminal.</li>
+<li><code>--publish</code> or <code>-p</code> forwards the port on your machine to the container’s port. This is important for running RStudio (port 8787) and/or a Shiny server (port 3838) as a container. It is also important when running multiple containers.</li>
+<li><code>--name</code> gives a name to your container. This is not necessary but it’s useful for managing containers (stopping, removing, etc..).</li>
+<li><code>-e</code> is used for environment variables. In this case the variable <code>PASSWORD</code> needs to be provided, any string can be chosen as the password.</li>
+</ul>
+<p>To check the containers currently running on your machine use <code>docker ps --all</code>, you should see similar output to below.</p>
+<pre class="bash"><code>$ docker ps --all
+
+CONTAINER ID  IMAGE                 COMMAND  CREATED        STATUS        PORTS                   NAMES
+96f368aefb83  rocker/rstudio:3.6.0  &quot;/init&quot;  9 seconds ago  Up 8 seconds  0.0.0.0:8787-&gt;8787/tcp  my-rstudio</code></pre>
+<div id="opening-rstudio" class="section level4">
+<h4>Opening RStudio</h4>
+<p>RStudio can now be opened by going to <code>localhost:8787</code> in a web browser. The username will be <code>rstudio</code> and password will be the variable provided. In the case above I picked <code>yourpassword</code>.</p>
+<p><img src="images/rstudio_login.png" width="600" style="display: block; margin: auto;" /></p>
+</div>
+<div id="running-multiple-containers" class="section level4">
+<h4>Running Multiple Containers</h4>
+<p>The <code>-p</code> flag in the run command determines which port RStudio can be found at. For example, if we used <code>-p 8000:8787</code> RStudio will then be accessible using <code>localhost:8000</code> in a web browser. This is useful when running multiple versions of R and RStudio, because each container will need to be routed through a different port.</p>
+<p>Note: more advanced uses of Docker containers allow communication between containers, but this will not be covered here. See the <a href="https://docs.docker.com/">Docker website</a> for further reading.</p>
+</div>
+</div>
+<div id="versions-of-r" class="section level3">
+<h3>Versions of R</h3>
+<p>An important feature of Docker images is version control, which is managed by ‘tagging’ an image. The available RStudio tags can be found <a href="https://hub.docker.com/r/rocker/rstudio/tags">here</a>. To start a container with a specific tag, the tag name is added with a colon after the image name.</p>
+<p>For example, to use RStudio with the current development version of R use:</p>
+<pre class="bash"><code>$ docker run -d -p 8001:8787 -e PASSWORD=yourpassword --name my-rstudio-devel rocker/rstudio:devel</code></pre>
+<p>or to use version 3.6.0:</p>
+<pre class="bash"><code>$ docker run -d -p 8002:8787 -e PASSWORD=yourpassword --name my-rstudio-363 rocker/rstudio:3.6.3</code></pre>
+<p>As mentioned in the section above, both containers can be run simultaneously. In this example, the development and 3.6.3 versions of R will be accessible simultaneously in a web browser at <code>localhost:8001</code> and <code>localhost:8002</code> respectively.</p>
+<p><code>latest</code> is used as a default tag when no specific tag is provided, i.e. if only <code>rocker/rstudio</code> is used then <code>rocker/rstudio:latest</code> will be downloaded/started.</p>
+</div>
+<div id="stopping-containers" class="section level3">
+<h3>Stopping Containers</h3>
+<p>To stop a container use the <code>docker rm</code> command:</p>
+<pre class="bash"><code>$ docker rm --force my-rstudio-devel</code></pre>
+<pre class="bash"><code>$ docker rm --force my-rstudio-363</code></pre>
+<p><br></p>
+</div>
+</div>
+<div id="reproducible-research" class="section level2">
+<h2>Reproducible Research</h2>
+<p>For reproducible research the environment used each time to run the code should match as much as possible. Details such as the version of R and the version of individual packages/libraries can have an effect on the final results.</p>
+<p>We have seen that a specific version of R can be chosen when using Docker. R scripts can also be included in a custom Docker image.</p>
+<p>A complete standalone environment can be created so that an end user does not need to worry about installing any extra libraries or having specific software installed. The only requirement is to have Docker installed.</p>
+<div id="dockerfile" class="section level3">
+<h3>Dockerfile</h3>
+<p>To build a Docker image, you will need to create a Dockerfile. This file is essentially a configuration determining what libraries, files and/or data should be included in the image. This file can be created and edited using any editor such as <a href="https://www.vim.org/">VIM</a> or even RStudio. The file does not use an extension and is usually simply saved as <code>Dockerfile</code>.</p>
+<p>The example file below can downloaded using <a href="https://raw.githubusercontent.com/aboland/ReproducibleResearch/master/Docker/SimpleDockerfile">this link</a>.</p>
+<pre><code>FROM rocker/rstudio:4.0.0
+
+RUN apt-get update \
+  &amp;&amp; apt-get install -y --no-install-recommends \
+  libxml2 \
+  git
+
+RUN install2.r --error \
+  --deps TRUE \
+  devtools \
+  ggplot2
+
+COPY Docker/Docker.Rmd /home/rstudio/
+COPY Docker/Simple_Example/sample_script.R /home/rstudio/</code></pre>
+<ul>
+<li>Dockerfiles start with a base image using the <code>FROM</code>, in this example <code>rocker/rstudio:4.0.0</code>. This is a pre existing image which has R and RStudio already installed.</li>
+<li>System libraries can be installed using <code>RUN apt-get install</code></li>
+<li><code>COPY</code> is used to copy files or data from your system into the image. If you want to be able to access files or data in the container they must be copied across in this way.</li>
+</ul>
+<div id="r-libraries" class="section level4">
+<h4>R Libraries</h4>
+<ul>
+<li>The most straight forward way to install an R library is to use <code>install2.r</code><br />
+The <code>--error</code> flag ensures that the image build will fail if the R library fails to install.</li>
+<li>A specific version of a library can be installed using the <code>devtools</code> package<br />
+<code>RUN R -e 'install.packages(&quot;devtools&quot;)'</code><br />
+<code>RUN R -e 'devtools::install(&quot;ggplot2&quot;, version = &quot;3.3.0&quot;)'</code></li>
+</ul>
+<p>Some libraries can take a long time to install. If you consistently use a certain set of libraries it may be useful to create an image containing these libraries. This can be used as your base image to start from. For example, if you use many of the <a href="https://www.tidyverse.org/">tidyverse</a> libraries, these have a long installation time. A quicker way to build the above image starts with <code>rocker/tidyverse:4.0.0</code>.</p>
+<pre><code>FROM rocker/tidyverse:4.0.0
+
+COPY Docker/Docker.Rmd /home/rstudio/
+COPY Docker/Simple_Example/sample_script.R /home/rstudio/</code></pre>
+</div>
+</div>
+<div id="building-images" class="section level3">
+<h3>Building Images</h3>
+<p>By default Docker will look for a file called <code>Dockerfile</code> in the current working directory. In this case the following command can be used to build an image. The <code>--tag</code> or <code>-t</code> is used to give the image a name, in this case the image will be saved as <code>image_name</code>.</p>
+<pre class="bash"><code>$ docker build --tag image_name .</code></pre>
+<p>The <code>-f</code> flag can be used to specify what file to use as the dockerfile. In the example below a file called <code>mycustomedockerfile</code> is used to create a Docker image named <code>image_name</code>.</p>
+<pre class="bash"><code>$ docker build -t image_name -f mycustomedockerfile .</code></pre>
+</div>
+<div id="sharing-images" class="section level3">
+<h3>Sharing Images</h3>
+<p>Images can be stored and shared using the Docker central repository.</p>
+<p>The only requirement to run an image is to have Docker installed. A person would not need R or RStudio installed on their local machine. It’s even possible to include a copy of LaTeX with an image so that PDF document’s can be knitted.</p>
+<p>For more detailed information on setting up a Docker account and sharing images see <a href="https://docs.docker.com/get-started/part3/">this tutorial</a>.</p>
+<p>In short, it’s possible to tag an image with your Docker account and save it in the central repository. Once here anyone can then pull and run the image.</p>
+<pre class="bash"><code>$ docker tag image_name:tag &lt;Your Docker ID&gt;/image_name:tag
+$ docker push &lt;Your Docker ID&gt;/image_name:tag</code></pre>
+<p><br></p>
+<div id="example" class="section level4">
+<h4>Example</h4>
+<p>The following example uses the files contained in <a href="https://github.com/aboland/ReproducibleResearch">this Github repository</a>.</p>
+<p>Navigating to the root directory of the repository using terminal, and running the following commands builds and pushes the image.</p>
+<pre class="bash"><code>$ docker build -t sample_rstudio:1.0 -f Docker/SimpleDockerfile .
+$ docker tag sample_rstudio:1.0 bolandai/sample_rstudio:1.0
+$ docker push bolandai/sample_rstudio:1.0</code></pre>
+<p>The Dockerfile is named <code>SimpleDockerfile</code> and is located in the <code>Docker</code> folder within the repository.</p>
+<ul>
+<li>First the image is built, it is named <code>sample_rstudio</code> and tagged <code>1.0</code>.<br />
+</li>
+<li>Next, the image is tagged with my Docker ID and give it’s given the same name and tag as before.</li>
+<li>Finally the image is pushed to the central repository.</li>
+</ul>
+<p>Since it is a public Docker repository, anyone with Docker installed can run the following command and start a container with my image.</p>
+<pre class="bash"><code>$ docker run -d -p 8787:8787 -e PASSWORD=mypassword bolandai/sample_rstudio</code></pre>
+<p>The <a href="https://github.com/aboland/ReproducibleResearch/blob/master/Docker/Docker.Rmd">R Markdown file</a> used to create this document is included in the image and is available to edit and knit in the Home directory when RStudio starts.</p>
+<p><img src="images/rstudio_example.png" width="600" style="display: block; margin: auto;" /></p>
+<p><br><br><br></p>
+</div>
+</div>
+</div>
+<div id="advanced-use" class="section level1">
+<h1>Advanced Use</h1>
+<div id="linking-to-local-directory" class="section level2">
+<h2>Linking to local directory</h2>
+<p>It was mentioned earlier that Docker containers are completely isolated. However, sometimes it is necessary to communicate outside of the container, for example to save data on your the local machine.</p>
+<p>The Docker container can be linked with a local folder at the time of starting the container. The <code>-v</code> flag is used for this purpose. The below command will link the RStudio home folder with the desktop of the local machine running the container. Anything saved or edited in the home folder when using the container will be stored on the local desktop.</p>
+<pre class="bash"><code>$ docker run -d -p 8787:8787 -e PASSWORD=mypassword -v ~/Desktop:/home/rstudio/ bolandai/sample_rstudio</code></pre>
+</div>
+<div id="continuous-integration-git-travis" class="section level2">
+<h2>Continuous Integration (Git &amp; Travis)</h2>
+<p>To create a nice workflow, it’s possible to automate the Docker build process. Once code is stored on Github, the docker image can be remotely built when the code is updated.</p>
+<p>Two options for this are to use Docker Hub or Travis CI</p>
+<div id="docker-hub" class="section level3">
+<h3>Docker Hub</h3>
+<p>Docker Hub which is used for storing and sharing images can be linked to Github so that the image is automatically built for specific branches when code is updated.</p>
+<p>See <a href="https://docs.docker.com/docker-hub/builds/">this article</a> for more information.</p>
+</div>
+<div id="travis-ci" class="section level3">
+<h3>Travis CI</h3>
+<p>An alternative is to use <a href="https://travis-ci.org/">Travis CI</a>. Travis CI must also be linked to Github in order to work. As well as building the Docker image, Travis CI can also be used to build and test personal R packages.</p>
+<p>An example of using Travis CI can be seen <a href="https://travis-ci.org/github/aboland/ReproducibleResearch">here</a>.</p>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
