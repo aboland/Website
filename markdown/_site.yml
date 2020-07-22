@@ -29,7 +29,7 @@ navbar:
     - text: "Shiny Apps"
       menu:
         - text: "Dublin Public Transport"
-          href: http://rtpi.aboland.ie
+          href: https://aboland.shinyapps.io/DublinTransport/
         - text: "-------"
         - text: "Premier League Stats"
           href: http://ff.aboland.ie
