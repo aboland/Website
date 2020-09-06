@@ -286,6 +286,9 @@ $(document).ready(function () {
     <li class="divider"></li>
     <li class="dropdown-header">Presentations</li>
     <li>
+      <a href="/docs/RSS2020.html">RSS 2020</a>
+    </li>
+    <li>
       <a href="/docs/Young-ISA2019.html">Young-ISA 2019</a>
     </li>
     <li>
@@ -325,7 +328,7 @@ $(document).ready(function () {
     </li>
     <li class="divider"></li>
     <li>
-      <a href="http://ff.aboland.ie">Premier League Stats</a>
+      <a href="http://pl.aboland.ie">Premier League Stats</a>
     </li>
     <li>
       <a href="http://gaa.aboland.ie">GAA Stats</a>
@@ -453,9 +456,9 @@ library(dplyr)</code></pre>
   group_by(language) %&gt;%  # group by langauge
   summarise(lang_count = n(),  # calc number of packages by language
             lang_lines = sum(code)  # calc number of lines of code by language
-            ) -&gt; cran_language_summary
-
-cran_language_summary %&gt;%
+            ) -&gt; cran_language_summary</code></pre>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre class="r"><code>cran_language_summary %&gt;%
   top_n(params$top_n, lang_count) %&gt;%  # filter by top n using params$top_n
   ggplot(aes(x = reorder(language, lang_count, decreasing = T) , y = lang_count)) +
   geom_histogram(stat = &quot;identity&quot;, fill = &quot;steelblue&quot;) +
@@ -488,9 +491,9 @@ cran_code %&gt;%
     ) %&gt;%
   mutate(code = ifelse(is.na(code), 0, code),  # change na&#39;s to 0 
          perc_lang = code/total_lines) %&gt;%  # calc % of R
-  na.omit() -&gt; cran_perc_lang
-
-cran_perc_lang %&gt;%
+  na.omit() -&gt; cran_perc_lang</code></pre>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre class="r"><code>cran_perc_lang %&gt;%
   ggplot(aes(perc_lang)) +
   geom_histogram(fill = &quot;steelblue&quot;, colour = &quot;black&quot;, binwidth = 0.1) +
   scale_x_continuous(labels = percent) +  # use % on x axis

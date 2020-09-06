@@ -8,6 +8,8 @@ navbar:
           href: /docs/cv-WEB.pdf
         - text: "-------"
         - text: "Presentations"
+        - text: "RSS 2020"
+          href: /docs/RSS2020.html
         - text: "Young-ISA 2019"
           href: /docs/Young-ISA2019.html
         - text: "EARL Boston 2017"
@@ -32,7 +34,7 @@ navbar:
           href: https://aboland.shinyapps.io/DublinTransport/
         - text: "-------"
         - text: "Premier League Stats"
-          href: http://ff.aboland.ie
+          href: http://pl.aboland.ie
         - text: "GAA Stats"
           href: http://gaa.aboland.ie
         - text: "-------"
