@@ -3,7 +3,7 @@ title: "Week 5 - 2018"
 ---
 
 ```{r setup, include = F}
-knitr::opts_chunk$set(cache = TRUE, fig.align='center')
+knitr::opts_chunk$set(cache = TRUE, fig.align='center', message = FALSE)
 ```
 
 ***

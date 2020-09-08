@@ -423,16 +423,17 @@ $(document).ready(function () {
 <div id="animation" class="section level3">
 <h3>Animation</h3>
 <p>Using the <a href="https://github.com/thomasp85/gganimate" target="_blank">gganimate</a> library, I created an animation over time of the number of eligible voters versus the number of votes.</p>
+<p><img src="tt_2018_week28_files/figure-html/week28_code-1.gif" width="50%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="code" class="section level2">
 <h2>Code</h2>
-<pre class="r"><code>library(tidyverse)
+<pre class="r"><code>library(dplyr)
 library(gganimate)
 library(scales)
 
  # Load data
-voter_data &lt;- read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018/2018-10-09/voter_turnout.csv&quot;)
+voter_data &lt;- readr::read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018/2018-10-09/voter_turnout.csv&quot;)
 
  # Remove unwanted entries
 state_data &lt;- voter_data %&gt;% 
@@ -451,7 +452,7 @@ votes_vs_eligible &lt;- ggplot(state_data, aes(votes, eligible_voters, colour = 
   transition_time(year) +
   ease_aes(&#39;quartic-in-out&#39;)  # determines how points will move
 
-animate(votes_vs_eligible, fps = 7.5)  # create the animation</code></pre>
+animate(votes_vs_eligible, fps = 7.5, width = 1000, height = 1000, res = 200)  # create the animation</code></pre>
 <p><br><br />
 <br></p>
 <div id="twitter" class="section level3">
