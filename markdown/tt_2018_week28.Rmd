@@ -15,13 +15,14 @@ Using the
 <a href="https://github.com/thomasp85/gganimate" target="_blank">gganimate</a>
 library, I created an animation over time of the number of eligible voters versus the number of votes.
 
-```{r week28_code, warning=FALSE, message=FALSE, error=FALSE, fig.align='center', echo=FALSE, cache=TRUE}
-library(tidyverse)
+
+```{r week28_code, warning=FALSE, message=FALSE, error=FALSE, fig.align='center', echo=FALSE, cache=TRUE, out.width="50%"}
+library(dplyr)
 library(gganimate)
 library(scales)
 
  # Load data
-voter_data <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018/2018-10-09/voter_turnout.csv")
+voter_data <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018/2018-10-09/voter_turnout.csv")
 
  # Remove unwanted entries
 state_data <- voter_data %>% 
@@ -40,7 +41,7 @@ votes_vs_eligible <- ggplot(state_data, aes(votes, eligible_voters, colour = sta
   transition_time(year) +
   ease_aes('quartic-in-out')  # determines how points will move
 
-animate(votes_vs_eligible, fps = 7.5)  # create the animation
+animate(votes_vs_eligible, fps = 7.5, width = 1000, height = 1000, res = 200)  # create the animation
 ```
 
 

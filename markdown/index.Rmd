@@ -8,7 +8,7 @@ title: "Dr. Aidan Boland"
 <div class = "row">
 <div class = "col-md-2">
 <center>
-<p><img src="docs/profile_2018.jpg" width="120px"  /></p>
+<p><img src="docs/profile_2018.webp" width="120px" alt = "Profile Picture" /></p>
 </center>
 </div>
 <div class = "col-md-10">
