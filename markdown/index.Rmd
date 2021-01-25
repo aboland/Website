@@ -42,6 +42,10 @@ I obtained my PhD from [University College Dublin](http://www.ucd.ie/) under the
 
 ### Selected Presentations
 
+- **[RSS 2020](https://www.youtube.com/watch?v=yWBObjtl108)**  
+In September 2020 I was invited to speak at the Royal Statistical Society annual conference.
+I spoke about my work devloping [Shiny](https://shiny.rstudio.com/) dashboards.
+
 - **[Young-ISA 2019](/docs/Young-ISA2019.html)**  
 In October 2019 I was invited to speak at the inaugural Young-Irish Statistical Association meeting.  
 I spoke about my work as a data scientist, and explored the evolving nature of job titles for statisticians/data scientists.
@@ -55,8 +59,8 @@ At the Enterprise Application of the R Language in Boston November 2017 I presen
 
 ### Teaching
 
-- **2019**  
-In the Autumn trimester of the 2019/2020 academic year I lectured [Introduction to Data Analytics](https://sisweb.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=MODULE&MODULE=STAT40720&MAJR=F084) which forms part of the [Online MSc in Data Analytics](https://sisweb.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=PROG&MAJR=F084) in the [School of Mathematics and Statistics](https://www.ucd.ie/mathstat/) in University College Dublin.  
+- **2019-2020**  
+In the Autumn trimester of the 2019/2020 and 2020/2021 academic year I lectured [Introduction to Data Analytics](https://sisweb.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=MODULE&MODULE=STAT40720&MAJR=F084) which forms part of the [Online MSc in Data Analytics](https://sisweb.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=PROG&MAJR=F084) in the [School of Mathematics and Statistics](https://www.ucd.ie/mathstat/) in University College Dublin.  
 In the first half of 2019 I delivered lectures for the [Data Analysis for Decision Makers](https://sisweb.ucd.ie/usis/!W_HU_MENU.P_PUBLISH?p_tag=QMOD&MAJR=BSW1&MODULE=MIS10090) module in the [Lochlann Quinn School of Buisness](http://www.ucd.ie/quinn/) in University College Dublin.  
 - **2016**  
 I previously lectured an introductory statistical module [(Practical Statistics)](https://sisweb.ucd.ie/usis/w_sm_web_inf_viewer_banner.show_module?p_subj=STAT&p_crse=10050) in [UCD](http://www.ucd.ie/). Topics covered included calculating summary statistics, graphs,  basic probability theory, confidence intervals, [regression and correlation.](http://bayes2.ucd.ie:3838/aboland/STAT10050/) The students were also thought the basics of [Minitab](https://www.minitab.com/en-us/) and [R](https://www.r-project.org/).
