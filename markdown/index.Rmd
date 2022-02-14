@@ -13,9 +13,13 @@ title: "Dr. Aidan Boland"
 </div>
 <div class = "col-md-10">
 
-Hi, I'm Aidan Boland, I currently work as a Senior Data Scientist with [Edge by Ascential](https://www.ascentialedge.com/) a leading firm in ecommerce insights and analytics. My work focuses on researching and implementing statistical and machine learning techniques in order to improve and automate processes within the company.
+Hi I'm Aidan Boland, I currently work as a Data Architect at [Cubic Telecom](https://www.cubictelecom.com), a technology company who provide connected software for Internet of Things
 
-I'm also an occasional lecturer in the [School of Mathematics and Statistics](https://www.ucd.ie/mathstat/) in University College Dublin, where I currently lecture Introduction to Data Analytics which forms part of the Online Masters in Data Analytics.
+My work focuses on building end to end machine learning solutions  within the analytics team at Cubic. 
+
+Previously, I was a Senior Data Scientist at [Edge by Ascential](https://www.ascentialedge.com/) where I researched and implemented statistical and machine learning techniques in order to improve and automate processes within the company.
+
+I was also an occasional lecturer in the [School of Mathematics and Statistics](https://www.ucd.ie/mathstat/) in University College Dublin, where I lectured Introduction to Data Analytics which formed part of the Online Masters in Data Analytics.
 </div>
 </div>
 
@@ -27,10 +31,12 @@ I'm also an occasional lecturer in the [School of Mathematics and Statistics](ht
 
 ### Background
 
-- Edge by Ascential (Clavis Insight)  
-Clavis Insight were acquired by [Ascential](https://www.ascential.com/) in 2017, and rebranded as [Edge by Ascential](https://www.ascentialedge.com/) in 2018. I have worked in Clavis Insight and subsequently Edge by Ascential since 2016.
+- Cubic Telecom  
+I am currently a Data Architect at [Cubic Telecom](https://www.cubictelecom.com). My role focuses on researching and building machine learning solutions for the analytics team.
+- Edge by Ascential (Clavis Insight)  (2016 - 2021)  
+Clavis Insight were acquired by [Ascential](https://www.ascential.com/) in 2017, and rebranded as [Edge by Ascential](https://www.ascentialedge.com/) in 2018. I worked in Clavis Insight and subsequently Edge by Ascential from 2016 until 2021.
 - Postdoc (2015/2016)  
-I completed a year as a Postdoctoral researcher in the [Insight Center for Data Analytics](https://www.insight-centre.org/) at [UCD](http://www.ucd.ie/) with [Prof. Andrew Parnell](http://mathsci.ucd.ie/~parnell_a/). The project was in conjunction with [Clavis Insight](http://clavisinsight.com/) and focused on machine learning algorithms, in particular supervised and unsupervised text classification.
+I completed a year as a Post-doctoral researcher in the [Insight Center for Data Analytics](https://www.insight-centre.org/) at [UCD](http://www.ucd.ie/) with [Prof. Andrew Parnell](http://mathsci.ucd.ie/~parnell_a/). The project was in conjunction with [Clavis Insight](http://clavisinsight.com/) and focused on machine learning algorithms, in particular supervised and unsupervised text classification.
 - PhD (2011 - 2015)  
 I obtained my PhD from [University College Dublin](http://www.ucd.ie/) under the supervision of [Prof. Nial Friel](http://mathsci.ucd.ie/~nial/). My PhD research focused on using Markov Chain Monte Carlo (MCMC) to estimate intractable likelihoods for Gibbs random fields.
 <!-- My PhD research focused on overcoming intractable likelihoods in Bayesian analysis. I particular  -->
@@ -44,7 +50,7 @@ I obtained my PhD from [University College Dublin](http://www.ucd.ie/) under the
 
 - **[RSS 2020](https://www.youtube.com/watch?v=yWBObjtl108)**  
 In September 2020 I was invited to speak at the Royal Statistical Society annual conference.
-I spoke about my work devloping [Shiny](https://shiny.rstudio.com/) dashboards.
+I spoke about my work developing [Shiny](https://shiny.rstudio.com/) dashboards.
 
 - **[Young-ISA 2019](/docs/Young-ISA2019.html)**  
 In October 2019 I was invited to speak at the inaugural Young-Irish Statistical Association meeting.  
