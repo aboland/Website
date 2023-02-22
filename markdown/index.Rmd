@@ -13,7 +13,7 @@ title: "Dr. Aidan Boland"
 </div>
 <div class = "col-md-10">
 
-Hi I'm Aidan Boland, I currently work as a Data Architect at [Cubic Telecom](https://www.cubictelecom.com), a technology company who provide connected software for Internet of Things
+Hi, I'm Aidan Boland, I currently work as a Data Architect at [Cubic Telecom](https://www.cubictelecom.com), a technology company who provide connected software for Internet of Things
 
 My work focuses on building end to end machine learning solutions  within the analytics team at Cubic. 
 

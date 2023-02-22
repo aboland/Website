@@ -31,7 +31,7 @@ library(plotly)
 horror_movie <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018/2018-10-23/movie_profit.csv")
 
  # Tidy dates and calculate return
-horror_movie <- horror_movie %>% select(-X1) %>%
+horror_movie <- horror_movie %>% select(-`...1`) %>%
   mutate(release_date = lubridate::mdy(release_date), 
          release_year = lubridate::year(release_date),
          return = worldwide_gross - production_budget)
