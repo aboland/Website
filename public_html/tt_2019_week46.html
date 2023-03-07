@@ -476,11 +476,11 @@ cran_code %&gt;%
   mutate(code = ifelse(is.na(code), 0, code),  # change na&#39;s to 0 
          perc_lang = code/total_lines) %&gt;%  # calc % of R
   na.omit() -&gt; cran_perc_lang</code></pre>
-<pre><code>## Warning in left_join(., cran_code %&gt;% filter(language == params$perc_comparison) %&gt;% : Each row in `x` is expected to match at most 1 row
-## in `y`.
+<pre><code>## Warning in left_join(., cran_code %&gt;% filter(language == params$perc_comparison) %&gt;% : Each row in `x` is expected to match at most 1
+## row in `y`.
 ## ℹ Row 9511 of `x` matches multiple rows.
-## ℹ If multiple matches are expected, set `multiple =
-##   &quot;all&quot;` to silence this warning.</code></pre>
+## ℹ If multiple matches are expected, set
+##   `multiple = &quot;all&quot;` to silence this warning.</code></pre>
 <pre class="r"><code>cran_perc_lang %&gt;%
   ggplot(aes(perc_lang)) +
   geom_histogram(fill = &quot;steelblue&quot;, colour = &quot;black&quot;, binwidth = 0.1) +
