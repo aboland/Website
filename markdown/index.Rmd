@@ -15,7 +15,7 @@ title: "Dr. Aidan Boland"
 
 Hi, I'm Aidan Boland, I currently work as a Data Architect at [Cubic Telecom](https://www.cubictelecom.com), a technology company who provide connected software for Internet of Things
 
-My work focuses on building end to end machine learning solutions  within the analytics team at Cubic. 
+My work focuses on building end to end machine learning solutions within the analytics team at Cubic. 
 
 Previously, I was a Senior Data Scientist at [Edge by Ascential](https://www.ascentialedge.com/) where I researched and implemented statistical and machine learning techniques in order to improve and automate processes within the company.
 
